@@ -1,0 +1,35 @@
+uploadButton.addEventListener('click', () => {
+    const file = fileInput.files[0];
+    if (file) {
+        const formData = new FormData();
+        formData.append('scanned_form', file);
+
+
+fetch('upload.php', {
+    method: 'POST',
+    body: formData
+})
+
+// SQL Insertion
+$timestamp = date('Y-m-d H:i:s'); // Add current timestamp
+$filepath = "documents/$fileName"; // Define the filepath
+$status = 'Pending'; // Default status
+
+$sql = "INSERT INTO `approved_forms` (`id`, `filename`, `filepath`, `timestamp`, `status`) VALUES (NULL, '$fileName', '$filepath', '$timestamp', '$status')";
+
+// Error handling: Check if the query is successful
+if (mysqli_query($conn, $sql)) {
+    echo "Record inserted successfully!";
+    ?>
+    <script type="text/javascript" language="javascript">
+        window.location = "protected.php";
+    </script>
+    <?php
+} else {
+    die("Error inserting record: " . mysqli_error($conn));
+}
+}
+?>
+
+
+

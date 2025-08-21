@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chatbot</title>
+    <style>
+        body {
+            background-color: blanchedalmond;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgb(222, 20, 13);
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        .chat-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .messages {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .user-message {
+            background-color: #e1ffc7;
+            text-align: right;
+        }
+        .bot-message {
+            background-color: #f1f1f1;
+            text-align: left;
+        }
+        .input-bar {
+            display: flex;
+            justify-content: space-between;
+        }
+        .input-bar input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            margin-right: 10px;       
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .input-bar button {
+            padding: 10px 20px;
+            background-color: rgb(222, 20, 13);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .input-bar button:hover {
+            background-color: #630303;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Simple Chatbot
+    </header>
+    <div class="chat-container">
+        <div class="messages" id="chat-messages">
+            <!-- Chat messages will be appended here -->
+        </div>
+        <div class="input-bar">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('user-input');
+            const messageText = userInput.value.trim();
+            if (messageText === '') return;
+
+            // Append user message to chat
+            appendMessage(messageText, 'user-message');
+
+            // Simulate bot response
+            setTimeout(() => {
+                const botResponse = getBotResponse(messageText);
+                appendMessage(botResponse, 'bot-message');
+            }, 500);
+
+            // Clear input field
+            userInput.value = '';
+        }
+
+        function appendMessage(text, className) {
+            const messageContainer = document.getElementById('chat-messages');
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', className);
+            messageElement.textContent = text;
+            messageContainer.appendChild(messageElement);
+            messageContainer.scrollTop = messageContainer.scrollHeight;
+        }
+
+        function getBotResponse(message) {
+            // Simple keyword-based responses
+            const responses = {
+                hello: 'Hi there! How can I help you today?',
+                help: 'Sure, what do you need help with?',
+                'how are you': 'I\'m just a bot, but I\'m here to help!',
+                'what is prome consultants all about':'PROME Consultants Limited is a knowledge-based firm engaged in the provision of Project Management and Engineering Consultancy Services and Solutions, particularly in the Built Environment.',
+                'Projects worked on':'over 1000 projects successfully worked on',
+                default: 'Sorry, I didn\'t understand that. Can you please rephrase?'
+            };
+
+            message = message.toLowerCase();
+
+            // Check for keywords in the message
+            for (let key in responses) {
+                if (message.includes(key)) {
+                    return responses[key];
+                }
+            }
+
+            return responses['default'];
+        }
+    </script>
+</body>
+</html>

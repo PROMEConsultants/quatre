@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prome Consultants Limited</title>
+    <link rel="stylesheet" type="text/css" href="file:///C:/path/to/style.css">
+    <link rel="stylesheet" href="style.css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            background-color: white;
+            /* Uske Raleway Bold for headings */
+h1, h2, h3, h4 {
+    font-family: 'roboto', sans-serif;
+    font-weight: 700; /* Bold */
+}
+
+/* Use lighter Raleway for paragraphs and other content */
+body, p, ul, li, a {
+    font-family: 'roboto',sans-serif;
+    font-weight: 300; /* Lighter */
+}
+
+/* You can add specific styles for source sans pro and Bebas Neue for other cases */
+
+            
+            margin: 0;
+            padding: 0;
+
+        }
+        header {
+            background-color: whitesmoke;
+            padding: 20px;
+            text-align: center;}
+            
+        .header-buttons button{
+            padding: 10px 20px;
+            background-color: #bb0a0a;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .header-buttons button:hover {
+            background-color: #630303;
+        }
+        .logo img {
+    height: 50px; /* Adjust as needed, or use width instead */
+}
+        .navigation {
+            background-color: blanchedalmond;
+            background-image: url(4.jpeg);
+        }
+        main{
+            width:100%;
+            box-sizing: border-box;
+        }
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: white;
+      overflow: auto;
+    }
+    
+    /* Slideshow container */
+    .slideshow {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .slideshow img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slideshow img.active {
+      opacity: 1;
+    }
+    
+    /* Motto overlay (on top of the slideshow) */
+    .motto-overlay {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+      pointer-events: none;
+    }
+    
+    /* Header (“Welcome”) styling & animation */
+    .motto-header {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .motto-header span {
+      display: inline-block;
+      opacity: 0;
+      transform: scale(0.5);
+      animation: popIn 0.5s forwards;
+    }
+    /* Stagger each letter's animation */
+    .motto-header span:nth-child(1) { animation-delay: 0.3s; }
+    .motto-header span:nth-child(2) { animation-delay: 0.4s; }
+    .motto-header span:nth-child(3) { animation-delay: 0.5s; }
+    .motto-header span:nth-child(4) { animation-delay: 0.6s; }
+    .motto-header span:nth-child(5) { animation-delay: 0.7s; }
+    .motto-header span:nth-child(6) { animation-delay: 0.8s; }
+    .motto-header span:nth-child(7) { animation-delay: 0.9s; }
+    .header span:nth-child(8) { animation-delay: 11.5s; }
+.header span:nth-child(9) { animation-delay: 11.6s; }
+.header span:nth-child(103) { animation-delay: 11.7s; }
+.header span:nth-child(104) { animation-delay: 11.8s; }
+.header span:nth-child(105) { animation-delay: 11.9s; }
+.header span:nth-child(106) { animation-delay: 12.0s; }
+.header span:nth-child(107) { animation-delay: 12.1s; }
+.header span:nth-child(108) { animation-delay: 12.2s; }
+.header span:nth-child(109) { animation-delay: 12.3s; }
+.header span:nth-child(110) { animation-delay: 12.4s; }
+.header span:nth-child(111) { animation-delay: 12.5s; }
+.header span:nth-child(112) { animation-delay: 12.6s; }
+.header span:nth-child(113) { animation-delay: 12.7s; }
+.header span:nth-child(114) { animation-delay: 12.8s; }
+.header span:nth-child(115) { animation-delay: 12.9s; }
+.header span:nth-child(116) { animation-delay: 13.0s; }
+.header span:nth-child(117) { animation-delay: 13.1s; }
+.header span:nth-child(118) { animation-delay: 13.2s; }
+.header span:nth-child(119) { animation-delay: 13.3s; }
+.header span:nth-child(120) { animation-delay: 13.4s; }
+.header span:nth-child(121) { animation-delay: 13.5s; }
+.header span:nth-child(122) { animation-delay: 13.6s; }
+.header span:nth-child(123) { animation-delay: 13.7s; }
+.header span:nth-child(124) { animation-delay: 13.8s; }
+
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.5); }
+      70% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    /* Underline effect for header */
+    .motto-header::after {
+      content: "";
+      display: block;
+      height: 3px;
+      background: maroon;
+      width: 0;
+      margin-top: 5px;
+      animation: underline 0.5s forwards;
+      animation-delay: 1s;
+    }
+    @keyframes underline {
+      to { width: 100%; }
+    }
+    
+    /* Paragraph styling & per-letter magnification */
+    .motto-paragraph {
+      font-size: 1.2em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+    .motto-paragraph span {
+      display: inline-block;
+      opacity: 0;
+      transform: scale(1);
+      animation: magnifyLetter 0.5s forwards;
+    }
+    /* Stagger delays for each letter in the paragraph.
+       Adjust the number of nth-child rules to match the letter count. */
+    .motto-paragraph span:nth-child(1) { animation-delay: 1.5s; }
+    .motto-paragraph span:nth-child(2) { animation-delay: 1.6s; }
+    .motto-paragraph span:nth-child(3) { animation-delay: 1.7s; }
+    .motto-paragraph span:nth-child(4) { animation-delay: 1.8s; }
+    .motto-paragraph span:nth-child(5) { animation-delay: 1.9s; }
+    .motto-paragraph span:nth-child(6) { animation-delay: 2.0s; }
+    .motto-paragraph span:nth-child(7) { animation-delay: 2.1s; }
+    .motto-paragraph span:nth-child(8) { animation-delay: 2.2s; }
+    .motto-paragraph span:nth-child(9) { animation-delay: 2.3s; }
+    .motto-paragraph span:nth-child(10) { animation-delay: 2.4s; }
+    .motto-paragraph span:nth-child(11) { animation-delay: 2.5s; }
+    .motto-paragraph span:nth-child(12) { animation-delay: 1.9s; }
+    .motto-paragraph span:nth-child(13) { animation-delay: 2.0s; }
+    .motto-paragraph span:nth-child(14) { animation-delay: 2.1s; }
+    .motto-paragraph span:nth-child(15) { animation-delay: 2.2s; }
+    .motto-paragraph span:nth-child(16) { animation-delay: 2.3s; }
+    .motto-paragraph span:nth-child(17) { animation-delay: 2.4s; }
+    .motto-paragraph span:nth-child(18) { animation-delay: 2.5s; }
+    .motto-paragraph span:nth-child(1) { animation-delay: 1.5s; }
+.motto-paragraph span:nth-child(2) { animation-delay: 1.6s; }
+.motto-paragraph span:nth-child(3) { animation-delay: 1.7s; }
+.motto-paragraph span:nth-child(4) { animation-delay: 1.8s; }
+.motto-paragraph span:nth-child(5) { animation-delay: 1.9s; }
+.motto-paragraph span:nth-child(6) { animation-delay: 2.0s; }
+.motto-paragraph span:nth-child(7) { animation-delay: 2.1s; }
+.motto-paragraph span:nth-child(8) { animation-delay: 2.2s; }
+.motto-paragraph span:nth-child(9) { animation-delay: 2.3s; }
+.motto-paragraph span:nth-child(10) { animation-delay: 2.4s; }
+.motto-paragraph span:nth-child(11) { animation-delay: 2.5s; }
+.motto-paragraph span:nth-child(12) { animation-delay: 2.6s; }
+.motto-paragraph span:nth-child(13) { animation-delay: 2.7s; }
+.motto-paragraph span:nth-child(14) { animation-delay: 2.8s; }
+.motto-paragraph span:nth-child(15) { animation-delay: 2.9s; }
+.motto-paragraph span:nth-child(16) { animation-delay: 3.0s; }
+.motto-paragraph span:nth-child(17) { animation-delay: 3.1s; }
+.motto-paragraph span:nth-child(18) { animation-delay: 3.2s; }
+.motto-paragraph span:nth-child(19) { animation-delay: 3.3s; }
+.motto-paragraph span:nth-child(20) { animation-delay: 3.4s; }
+.motto-paragraph span:nth-child(21) { animation-delay: 3.5s; }
+.motto-paragraph span:nth-child(22) { animation-delay: 3.6s; }
+.motto-paragraph span:nth-child(23) { animation-delay: 3.7s; }
+.motto-paragraph span:nth-child(24) { animation-delay: 3.8s; }
+.motto-paragraph span:nth-child(25) { animation-delay: 3.9s; }
+.motto-paragraph span:nth-child(26) { animation-delay: 4.0s; }
+.motto-paragraph span:nth-child(27) { animation-delay: 4.1s; }
+.motto-paragraph span:nth-child(28) { animation-delay: 4.2s; }
+.motto-paragraph span:nth-child(29) { animation-delay: 4.3s; }
+.motto-paragraph span:nth-child(30) { animation-delay: 4.4s; }
+.motto-paragraph span:nth-child(31) { animation-delay: 4.5s; }
+.motto-paragraph span:nth-child(32) { animation-delay: 4.6s; }
+.motto-paragraph span:nth-child(33) { animation-delay: 4.7s; }
+.motto-paragraph span:nth-child(34) { animation-delay: 4.8s; }
+.motto-paragraph span:nth-child(35) { animation-delay: 4.9s; }
+.motto-paragraph span:nth-child(36) { animation-delay: 5.0s; }
+.motto-paragraph span:nth-child(37) { animation-delay: 5.1s; }
+.motto-paragraph span:nth-child(38) { animation-delay: 5.2s; }
+.motto-paragraph span:nth-child(39) { animation-delay: 5.3s; }
+.motto-paragraph span:nth-child(40) { animation-delay: 5.4s; }
+.motto-paragraph span:nth-child(41) { animation-delay: 5.5s; }
+.motto-paragraph span:nth-child(42) { animation-delay: 5.6s; }
+.motto-paragraph span:nth-child(43) { animation-delay: 5.7s; }
+.motto-paragraph span:nth-child(44) { animation-delay: 5.8s; }
+.motto-paragraph span:nth-child(45) { animation-delay: 5.9s; }
+.motto-paragraph span:nth-child(46) { animation-delay: 6.0s; }
+.motto-paragraph span:nth-child(47) { animation-delay: 6.1s; }
+.motto-paragraph span:nth-child(48) { animation-delay: 6.2s; }
+.motto-paragraph span:nth-child(49) { animation-delay: 6.3s; }
+.motto-paragraph span:nth-child(50) { animation-delay: 6.4s; }
+.motto-paragraph span:nth-child(51) { animation-delay: 6.5s; }
+.motto-paragraph span:nth-child(52) { animation-delay: 6.6s; }
+.motto-paragraph span:nth-child(53) { animation-delay: 6.7s; }
+.motto-paragraph span:nth-child(54) { animation-delay: 6.8s; }
+.motto-paragraph span:nth-child(55) { animation-delay: 6.9s; }
+.motto-paragraph span:nth-child(56) { animation-delay: 7.0s; }
+.motto-paragraph span:nth-child(57) { animation-delay: 7.1s; }
+.motto-paragraph span:nth-child(58) { animation-delay: 7.2s; }
+.motto-paragraph span:nth-child(59) { animation-delay: 7.3s; }
+.motto-paragraph span:nth-child(60) { animation-delay: 7.4s; }
+.motto-paragraph span:nth-child(61) { animation-delay: 7.5s; }
+.motto-paragraph span:nth-child(62) { animation-delay: 7.6s; }
+.motto-paragraph span:nth-child(63) { animation-delay: 7.7s; }
+.motto-paragraph span:nth-child(64) { animation-delay: 7.8s; }
+.motto-paragraph span:nth-child(65) { animation-delay: 7.9s; }
+.motto-paragraph span:nth-child(66) { animation-delay: 8.0s; }
+.motto-paragraph span:nth-child(67) { animation-delay: 8.1s; }
+.motto-paragraph span:nth-child(68) { animation-delay: 8.2s; }
+.motto-paragraph span:nth-child(69) { animation-delay: 8.3s; }
+.motto-paragraph span:nth-child(70) { animation-delay: 8.4s; }
+.motto-paragraph span:nth-child(71) { animation-delay: 8.5s; }
+.motto-paragraph span:nth-child(72) { animation-delay: 8.6s; }
+.motto-paragraph span:nth-child(73) { animation-delay: 8.7s; }
+.motto-paragraph span:nth-child(74) { animation-delay: 8.8s; }
+.motto-paragraph span:nth-child(75) { animation-delay: 8.9s; }
+.motto-paragraph span:nth-child(76) { animation-delay: 9.0s; }
+.motto-paragraph span:nth-child(77) { animation-delay: 9.1s; }
+.motto-paragraph span:nth-child(78) { animation-delay: 9.2s; }
+.motto-paragraph span:nth-child(79) { animation-delay: 9.3s; }
+.motto-paragraph span:nth-child(80) { animation-delay: 9.4s; }
+.motto-paragraph span:nth-child(81) { animation-delay: 9.5s; }
+.motto-paragraph span:nth-child(82) { animation-delay: 9.6s; }
+.motto-paragraph span:nth-child(83) { animation-delay: 9.7s; }
+.motto-paragraph span:nth-child(84) { animation-delay: 9.8s; }
+.motto-paragraph span:nth-child(85) { animation-delay: 9.9s; }
+.motto-paragraph span:nth-child(86) { animation-delay: 10.0s; }
+.motto-paragraph span:nth-child(87) { animation-delay: 10.1s; }
+.motto-paragraph span:nth-child(88) { animation-delay: 10.2s; }
+.motto-paragraph span:nth-child(89) { animation-delay: 10.3s; }
+.motto-paragraph span:nth-child(90) { animation-delay: 10.4s; }
+.motto-paragraph span:nth-child(91) { animation-delay: 10.5s; }
+.motto-paragraph span:nth-child(92) { animation-delay: 10.6s; }
+.motto-paragraph span:nth-child(93) { animation-delay: 10.7s; }
+.motto-paragraph span:nth-child(94) { animation-delay: 10.8s; }
+.motto-paragraph span:nth-child(95) { animation-delay: 10.9s; }
+.motto-paragraph span:nth-child(96) { animation-delay: 11.0s; }
+.motto-paragraph span:nth-child(97) { animation-delay: 11.1s; }
+.motto-paragraph span:nth-child(98) { animation-delay: 11.2s; }
+.motto-paragraph span:nth-child(99) { animation-delay: 11.3s; }
+.motto-paragraph span:nth-child(100) { animation-delay: 11.4s; }
+
+    @keyframes magnifyLetter {
+      0% { opacity: 0; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+
+
+       
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .icon-box {
+            text-align: center;
+            background-color:whitesmoke;
+            padding: 20px;
+            border-radius: 10px;
+            color:#151414;
+        }
+        .icon-box img {
+            max-width: 200px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .icon-box p {
+            font-size: 16px;
+        }
+        .paragraph-container {
+            display: block;
+            margin-bottom: 20px;
+        }
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #bb0a0a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .read-more-btn:hover {
+            background-color: rgb(113, 19, 16);
+        }
+        /* Styles for the accreditations section */
+        #accreditations {
+            padding: 20px;
+        }
+        #accreditations h1,
+        #accreditations h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;  /* Increase this value to add more space */
+        }
+        .logo-container a {
+            display: inline-block;
+        }
+        .logo-container img {
+            max-width: 100px;
+            height: auto;
+        }
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .video-container video {
+            width: 80%;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        
+
+
+
+        .footer-item.social-media {
+    text-align: center;
+}
+
+.footer-item.social-media a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.footer-item.social-media img {
+    width: 20px; /* Adjust size as needed */
+    height: auto;
+    vertical-align: middle;
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Header section-->
+    <header>
+        <div class="logo">
+            <img src="prome.png" alt="Your Logo">
+        </div>
+        <div class="header-buttons">
+        <nav>
+            <ul class="nav-links">
+                <a href="home.html"><button id="home-btn">Home</button></a>
+                <a href="about us.html"><button id="About-us-btn">About Us</button></a>
+                <a href="sectors.html"><button id="Sectors-btn">Sectors</button></a>
+                <a href="projects.html"><button id="Projects">Projects</button></a>
+                <a href="services.html"><button id="Services">Services</button></a>
+                
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <main>
+        <!--Slideshow Section-->
+        <div class="slideshow">
+            <!-- Ensure these image filenames match exactly -->
+            <img src="c.JPG" alt="Slide 1" class="active">
+            <img src="d.jpg" alt="Slide 3">
+            
+            <img src="a.JPG" alt="Slide 4">
+            <img src="b.JPG" alt="Slide 5"
+            
+            <!-- Motto overlay directly on the slideshow -->
+            <div class="motto-overlay">
+              <!-- Header: animated letter-by-letter -->
+              <h1 class="motto-header">
+                <span><strong>P</strong></span><span>r</span><span>o</span><span>m</span><span>e</span>     <span>C</span><span>o</span><span>n</span><span>s</span><span>u</span><span>l</span><span>t</span><span>a</span><span>n</span><span>t</span><span>s</span> <span>L</span><span>i</span><span>m</span><span>i</span><span>t</span><span>e</span><span>d</span>
+              </h1>
+              <!-- Paragraph: each letter gets its own magnification effect -->
+              <p class="motto-paragraph">
+               <strong> <span><strong>P</strong></span><span>r</span><span>e</span><span>c</span><span>i</span><span>s</span><span>i</span><span>o</span><span>n</span>  
+                <span>i</span><span>n</span>  
+                <span>E</span><span>n</span><span>g</span><span>i</span><span>n</span><span>e</span><span>e</span><span>r</span><span>i</span><span>n</span><span>g</span>  
+                <span>C</span><span>o</span><span>n</span><span>s</span><span>u</span><span>l</span><span>t</span><span>a</span><span>n</span><span>c</span><span>y</span>  
+                <span>a</span><span>n</span><span>d</span>  
+                <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span>  
+                <span>M</span><span>a</span><span>n</span><span>a</span><span>g</span><span>e</span><span>m</span><span>e</span><span>n</span><span>t</span>  
+                <span>:</span>  
+                <span>T</span><span>r</span><span>a</span><span>n</span><span>s</span><span>f</span><span>o</span><span>r</span><span>m</span><span>i</span><span>n</span><span>g</span>  
+                <span>V</span><span>i</span><span>s</span><span>i</span><span>o</span><span>n</span><span>s</span>  
+                <span>i</span><span>n</span><span>t</span><span>o</span>  
+                <span>r</span><span>e</span><span>a</span><span>l</span><span>i</span><span>t</span><span>y</span>  
+                <span>E</span><span>v</span><span>e</span><span>r</span><span>y</span>  
+                <span>s</span><span>t</span><span>e</span><span>p</span>  
+                <span>o</span><span>f</span>  
+                <span>t</span><span>h</span><span>e</span>  
+                <span>w</span><span>a</span><span>y</span></strong>
+                
+                
+              </p>
+            </div>
+          </div>
+        </section>
+        <!--Icon Grid Section-->
+        <section id="icon-boxes">
+            <div class="container">
+                <div class="icon-grid">
+                    <div class="icon-box">
+                        <img src="modern.png" alt="modern">
+                        <i class="fa-brands fa-edgecast"></i>
+                        <h3>Modern practices</h3>
+                        <p>We leverage modern project management and design practices</p>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <img src="digital.png"alt="digital">
+                        <h3>Digital First tools</h3>
+                        <p>We use modern and digital first hardware and software tools for design and modelling</p>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-user-group"></i>
+                        <img src="forgot.png" alt="forgot">
+                        <h3>Process Driven</h3>
+                        <p>Processes are the key to delivering quality results across multiple projects</p>
+                    </div>
+                    <div class="icon icon-box">
+                        <i class="fa-solid fa-desktop"></i>
+                        <img src="money.png" alt="money">
+                        <h3>Value For Money</h3>
+                        <p>Our services and solutions maximise the value of your project investment</p>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-gear"></i>
+                        <img src="displinary.png" alt="multi">
+                        <h3>Multi-disciplinary</h3>
+                        <p>Our team brings together expertise from multiple complimentary disciplines</p>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-desktop"></i>
+                        <img src="experience.png" alt="experience">
+                        <h3>Experience</h3>
+                        <p>Our consultants have deep experience and expertise in their respective fields</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+          <!-- Video Section -->
+          <section class="video-container">
+            <video controls>
+                <source src="silhoutee video.mov" type="video/mp4">
+                <!-- Fallback message for browsers that do not support the video tag -->
+                Your browser does not support the video tag.
+            </video>
+        <!--what we offer-->
+        <section>
+            <h1 class="section header">What we offer</h1>
+            <div class="icon-grid">
+                <div class="icon-box">
+                    <img src="hands.png" alt="hands">
+                    <i class="fa-brands fa-edgecast"></i>
+                    <h3>CONSTRUCTION SUPERVISION</h3>
+                    <p> -</p>
+                    <p>PROME Consultants Limited has a fully-fledged project management team that has demonstrated innovative approaches in the delivery of infrastructure projects on time and on budget</p>
+                    <a href="readmore construction supervision.html" class="read-more-btn">Read More</a>
+        </style>
+        </style>
+    
+            </div>
+            <div class="icon-box">
+                <i class="fa-solid fa-layer-group"></i>
+                <img src="telcommasts.png" alt="telcommasts">
+                <h3>ENERGY DEVELOPMENT STUDIES</h3>
+                <p>  </p>
+                <p> Appropriate energy studies , Energy conservation and energy resources development</p>
+                <a href="readmore2.html" class="read-more-btn">Read More</a>
+            </div>
+            <div class="icon-box">
+                <i class="fa-solid fa-user-group"></i>
+                <img src="justtalking.png" alt="justtalking">
+                <h3>PHYSICAL PLANNING</h3>
+                <p> .</p>
+                <p>Physical planning relates to design and managing of physical infrastructure including the zoning , land sub division and demarcating areas for development. The physical planning team</p>
+                <a href="readmore3.html" class="read-more-btn">Read More</a>
+    
+            </div>
+            
+            <div class="icon icon-box">
+                <i class="fa-solid fa-desktop"></i>
+                <img src="cameras.png" alt="cameras">
+                <h3>TOPOGRAHICAL AND CADASTRAL SURVEYS</h3>
+                <p> .</p>
+                <p>Topographical Engineering surveys , a thorough topographical survey is vital for the sucess of any engineering project. PROME consultants ltd operates a stand-alone topographical and cadastra</p>
+                <a href="readmore4.html" class="read-more-btn">Read More</a>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-brands fa-edgecast"></i>
+                    <img src="geograpical.png" alt="geograpical">
+                    <h3>GEOLOGICAL SURVEYS</h3>
+                    <p> .</p>
+                    <p>At PROME, we provide a complete service from materials sampling, in-situ testing and analysis through to the preparation of Interpretative Reports. Our team of engineers</p>
+                    <a href="readmore5.html" class="read-more-btn">Read More</a>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <img src="p.png"alt="p">
+                    <h3>ENVIROMENTAL SOCIO-ECONOMIC STUDIES</h3>
+                    <p> .</p>
+                    <p>Our Environment is constantly changing with development, so it is important that any development growth is sustainable both socially and economically in order to achieve</p>
+                    <a href="readmore6.html" class="read-more-btn">Read More</a>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-solid fa-user-group"></i>
+                    <img src="nia.jpg" alt="nia">
+                    <h3>MULTI-MODEL TRASPORTATION STUDIES</h3>
+                    <p> .</p>
+                    <p>Over the years Uganda developed a multi-modal transport system, based initially on railway and waterway services, followed later by roads and air services. Roads are</p>
+                    <a href="readmore7.html" class="read-more-btn">Read More</a>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-solid fa-desktop"></i>
+                    <img src="roadworking.png" alt="roadworking">
+                    <h3>DIGITAL TECHNOLOGY SOLUTIONS</h3>
+                    <p> .</p>
+                    <p>The growth of the economy amidst the pandemic can be ensured by putting in place comprehensive means of making predictions and formulating growth-oriented strategies around</p>
+                    <a href="readmore8.html" class="read-more-btn">Read More</a>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-brand fa-edgecast"></i>
+                    <img src="engseated.png" alt="engseated">
+                    <h3>ENGINEERING DESIGN</h3>
+                    <p> .</p>
+                    <p>Engineering design is a key aspect when it comes to solving the infrastructure problems facing the World today. PROME has over the years demonstrated competence</p>
+                    <a href="readmore9.html" class="read-more-btn">Read More</a>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-solid fa-desktop"></i>
+                    <img src="hands.png" alt="hands">
+                    <h3>PROJECT MANAGEMENT</h3>
+                    <p> .</p>
+                    <p>From our regional presence we bring together experienced professionals from the region and across the globe to provide project and contract management services to our</p>
+                    <a href="readmore10.html" class="read-more-btn">Read More</a>
+                </div>
+
+
+        </section>
+        <!-- Partner Logos -->
+        <section id="accreditations">
+            <h1>Accreditation/Membership Registration with Organisations</h1>
+            <div class="container">
+                <h2>Memberships</h2>
+                <div class="logo-container">
+                    <a href="https://www.irf.global" target="_blank">
+                        <img src="irf.png" alt="irf">
+                    </a>
+                    <a href="https://www.uipe.co.ug" target="_blank">
+                        <img src="uipe.png" alt="uipe">
+                    </a>
+                    <a href="https://www.worldbank.org/en/home" target="_blank">
+                        <img src="worldbank.png" alt="worldbank">
+                    </a>
+                    <a href="https://fidic.org" target="_blank">
+                        <img src="fidic.png" alt="fidic">
+                    </a>
+                    <a href="https://uace.or.ug" target="_blank">
+                        <img src="uace.png" alt="uace">
+                    </a>
+                    <a href="https://pau.go.ug" target="_blank">
+                        <img src="petrol.png" alt="petrol">
+                    </a>
+                </div>
+                <h2>Accreditations</h2>
+                <div class="logo-container">
+                    <a href="https://iso.org" target="_blank">
+                        <img src="iso.png" alt="iso">
+                    </a>
+                    
+                    <a href="https://irap.org" target="_blank">
+                        <img src="IRAP.png" alt="IRAP">
+                    </a>
+                </div>
+            </div>
+        </section>
+       
+        
+    </main>
+    <footer style="background-color: #b8afaf;">
+        <hr>
+       
+        <footer>
+            <div class="footer-container">
+              <div class="footer-item contact-info">
+                <h3>Contact Us</h3>
+                <p>Prome Consultants Limited</p>
+                <p>Innovations House, Plot 7B Acacia/Babiha Avenue</p>
+                <p>P.O. Box 24934, Kampala, Uganda</p>
+                <p>Phone: +256 (0) 414 345543/4</p>
+                <p>Email: info@promeconsultants.com</p>
+              </div>
+              <div class="footer-item map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.2673081240484!2d32.60128461702619!3d0.3198826736938728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbba4453c43d1%3A0xa23ec27a5a5ff4e9!2sProme%20Consultants%20Limited!5e0!3m2!1sen!2sug!4v1620121241407!5m2!1sen!2sug" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+              <div class="footer-item social-media">
+                <h3>Follow Us</h3>
+                
+                <a href="https://www.linkedin.com/company/prome-consultants-limited/posts/?feedView=all"target="_blank" class="linkedin-logo">
+                    <img src="in.png" alt="X/Twitter"> 
+            </a>
+               
+                <p>@Copyright Reserved 2025</p>
+                
+                  
+                </a>
+              </div>
+            </div>
+          </footer>
+          
+        </footer>
+        <script src="script.js"></script>
+        <script>
+           // Simple slideshow logic: switch images every 5 seconds.
+    const slides = document.querySelectorAll('.slideshow img');
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
+            document.getElementById('open-chatbox').addEventListener('click', function() {
+    document.querySelector('.chatbox-container').style.display = 'flex';
+    this.style.display = 'none';
+});
+
+document.getElementById('close-chatbox').addEventListener('click', function() {
+    document.querySelector('.chatbox-container').style.display = 'none';
+    document.getElementById('open-chatbox').style.display = 'block';
+});
+
+document.getElementById('send-message').addEventListener('click', function() {
+    const input = document.getElementById('chat-input');
+    const message = input.value.trim();
+    if (message) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.textContent = message;
+        document.querySelector('.messages').appendChild(messageElement);
+        input.value = '';
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+    const motto = document.querySelector(".motto-container");
+
+    // Wait for a slight delay before showing (for a smoother effect)
+    setTimeout(() => {
+        motto.classList.add("show"); // Apply the animation class
+    }, 500); // Adjust delay as needed (in milliseconds)
+});
+
+});
+
+        </script>
+    </body>
+    </html>

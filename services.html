@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Prome consultants</title>
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet"
+    type="text/css"
+    href="file:///C:/path/to/style.css">
+    <link rel ="stylesheet" href="style.css/style.css">
+    <style>
+        body {
+            background-color: white;
+            font-family: 'roboto', sans-serif;
+
+            margin: 0;
+            padding: 0;
+        }
+        
+        .logo img {
+    height: 50px; /* Adjust as needed, or use width instead */
+}
+/* Style for the heading */
+.heading {
+    font-weight: 400;      
+    color: #bb0a0a;         
+    font-size: 32px;        /* Adjust font size as needed */
+    font-family: 'roboto', sans-serif; /* Optional font choice */
+}
+
+        
+        header {
+            background-color: whitesmoke;
+            padding: 10px;
+            text-align: center;
+        }
+        .header-buttons a {
+            margin: 0 10px;
+        }
+        .header-buttons button {
+            padding: 10px 20px;
+            background-color:#bb0a0a;
+            color:white;
+            border: none;
+            cursor: pointer;
+        }
+        .header-buttons button:hover{
+            background-color: rgb(82, 19, 18);
+        }
+        .icon-grid{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .icon-box{
+            text-align: center;
+            background-color: whitesmoke;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .icon-box img{
+            max-width: 250px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .icon-box p{
+            font-size: 16px;
+        }
+        .paragraph-container{
+            display: block;
+            margin-bottom: 20px;
+        }
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color:#bb0a0a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .read-more-btn:hover {
+            background-color: rgb(116, 12, 12);
+        }
+        .chatbox-container {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.chatbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+}
+
+.chatbox-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chatbox-footer {
+    display: flex;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#send-message {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#open-chatbox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #3f677f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+}.footer-item.social-media {
+    text-align: center;
+}
+
+.footer-item.social-media a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.footer-item.social-media img {
+    width: 20px; /* Adjust size as needed */
+    height: auto;
+    vertical-align: middle;
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="navigation">
+        <div class="logo">
+            <img src="prome.png" alt="Your Logo">
+        </div>
+        <div class="header-buttons">
+        <div class="header-buttons">
+        <a href="home.html"><button id="home-btn">Home</button></a>
+        <a href="about us.html"><button id="About-us-btn">About Us</button></a>
+        <a href="sectors.html"><button id="Sectors-btn">Sectors</button></a>
+        <a href="projects.html"><button id="Projects">Projects</button></a>
+        <a href="services.html"><button id="Services">Services</button></a>
+        
+    </div>
+
+        </div>
+        </header>
+
+<main>
+    <h4 style="font-weight: bold; font-size: medium; color: #bb0a0a;">Services</h4>
+    <p>PROME Consultants Limited is a knowledge-based firm engaged in the provision of Project Management and Engineering Consultancy Services and Solutions particularly in the Built Environment.
+
+        As an ISO Certified firm, PROME Consultants has strong expertise in the provision of reliable knowledge based engineering and project management services focusing on key engineering areas of civil engineering and building, electrical, mechanical/industrial, environmental, transportation and energy using state-of-the-art competencies, and in full compliance of company core values on one hand and the national, regional and international standards on the other.</br>
+        
+       <p> PROME Consultants has accorded special focus on the infrastructure development because without the needed infrastructure, society is denied the capacity to sustain itself socially and/or economically.</p>
+        
+            PROME Consultants offers comprehensive consultancy project/program management and engineering services focused on addressing of the customers needs right from customer needs identification and assessment to product delivery, operation and maintenance.</p>
+            <!--Icon Grid Section-->
+
+
+            
+        <div class="icon-grid">
+            <div class="icon-box">
+                <img src="hands.png" alt="hands">
+                <i class="fa-brands fa-edgecast"></i>
+                <p style="font-weight: bold; font-size: medium; color: #bb0a0a;">ENGINEERING DESIGN</p>
+                <p>Engineering design is a key aspect when it comes to solving the infrastructure problems facing the World today. PROME has over the years demonstrated competence</p>
+                <a href="readmore9.html" class="read-more-btn">Read More</a>
+    
+
+        </div>
+        <div class="icon-box">
+            <i class="fa-solid fa-layer-group"></i>
+            <img src="telcommasts.png" alt="telcommasts">
+            <h4 style="font-weight: bold; font-size: medium; color: #bb0a0a;" >CONSTRUCTION SUPERVISION</h4>
+        
+            <p>Physical planning relates to design and managing of physical infrastructure including the zoning , land sub division and demarcating areas for development. The physical planning team</p>
+            <a href="readmore3.html" class="read-more-btn">Read More</a>
+        </div>
+        <div class="icon-box">
+            <i class="fa-solid fa-user-group"></i>
+            <img src="justtalking.png" alt="justtalking">
+            <p style="font-weight: bold; font-size: medium; color: #bb0a0a;" >PROJECT MANAGEMENT</p>
+           
+            <p>From our regional presence we bring together experienced professionals from the region and across the globe to provide project and contract management services to our</p>
+            <a href="readmore10.html" class="read-more-btn">Read More</a>
+            
+        </div>
+        <div class="icon icon-box">
+            <i class="fa-solid fa-desktop"></i>
+            <img src="cameras.png" alt="cameras">
+            <p style="font-weight: bold; font-size: medium; color: #bb0a0a;" >PHYSICAL PLANNING</p>
+            <p>PROME Consultants Limited has a fully-fledged project management team that has demonstrated innovative approaches in the delivery of infrastructure projects on time and on budget</p>
+                <a href="readmore construction supervision.html" class="read-more-btn">Read More</a>
+            
+            </div>
+            <div class="icon-box">
+                <i class="fa-brands fa-edgecast"></i>
+                <img src="geograpical.png" alt="geograpical">
+                <p style="font-weight: bold; font-size: medium; color: #bb0a0a;" >GEOLOGICAL SURVEYS</p>
+                <p>At PROME, we provide a complete service from materials sampling, in-situ testing and analysis through to the preparation of Interpretative Reports. Our team of engineers</p>
+                <a href="readmore5.html" class="read-more-btn">Read More</a>
+            </div>
+            <div class="icon-box">
+                <i class="fa-solid fa-layer-group"></i>
+                <img src="p.png"alt="p">
+                <p style="font-weight: bold; font-size: medium; color: #bb0a0a;" >ENVIROMENTAL SOCIO-ECONOMIC STUDIES</p>
+                <p>Our Environment is constantly changing with development, so it is important that any development growth is sustainable both socially and economically in order to achieve</p>
+                <a href="readmore6.html" class="read-more-btn">Read More</a>
+            </div>
+            <div class="icon-box">
+                <i class="fa-solid fa-user-group"></i>
+                <img src="nia.jpg" alt="nia">
+                <p style="font-weight: bold; font-size: medium; color: #bb0a0a;" >MULTI-MODEL TRASPORTATION STUDIES</p>
+                <p>Over the years Uganda developed a multi-modal transport system, based initially on railway and waterway services, followed later by roads and air services. Roads are</p>
+                <a href="readmore7.html" class="read-more-btn">Read More</a>
+            </div>
+            <div class="icon-box">
+                <i class="fa-solid fa-desktop"></i>
+                <img src="roadworking.png" alt="roadworking">
+                <p style="font-weight: bold; font-size: medium; color: #bb0a0a;" >DIGITAL TECHNOLOGY SOLUTIONS</p>
+                <p>The growth of the economy amidst the pandemic can be ensured by putting in place comprehensive means of making predictions and formulating growth-oriented strategies around</p>
+                <a href="readmore8.html" class="read-more-btn">Read More</a>
+            </div>
+            <div class="icon-box">
+                <i class="fa-brand fa-edgecast"></i>
+                <img src="engseated.png" alt="engseated">
+                <p style="font-weight: bold; font-size: medium; color: #bb0a0a;" >ENERGY DEVELOPMENT STUDIES</p>
+                <p> Appropriate energy studies , Energy conservation and energy resources development</p>
+            <a href="readmore2.html" class="read-more-btn">Read More</a>
+               
+            </div>
+            <div class="icon-box">
+                <i class="fa-solid fa-desktop"></i>
+                <img src="hands.png" alt="hands">
+                <p style="font-weight: bold; font-size: medium; color: #bb0a0a;">TOPOGRAHICAL AND CADASTRAL SURVEYS</p>
+                <p>Topographical Engineering surveys , a thorough topographical survey is vital for the sucess of any engineering project. PROME consultants ltd operates a stand-alone topographical and cadastra</p>
+            <a href="readmore4.html" class="read-more-btn">Read More</a>
+               
+            </div>
+          
+            
+
+
+</main>
+<footer style="background-color: blanchedalmond;">
+    <hr>
+   
+    <footer>
+        <div class="footer-container">
+          <div class="footer-item contact-info">
+            <h3>Contact Us</h3>
+            <p>Prome Consultants Limited</p>
+            <p>Innovations House, Plot 7B Acacia/Babiha Avenue</p>
+            <p>P.O. Box 24934, Kampala, Uganda</p>
+            <p>Phone: +256 (0) 414 345543/4</p>
+            <p>Email: info@promeconsultants.com</p>
+          </div>
+          <div class="footer-item map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.2673081240484!2d32.60128461702619!3d0.3198826736938728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbba4453c43d1%3A0xa23ec27a5a5ff4e9!2sProme%20Consultants%20Limited!5e0!3m2!1sen!2sug!4v1620121241407!5m2!1sen!2sug" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="footer-item social-media">
+            <h3>Follow Us</h3>
+            
+            <a href="https://www.linkedin.com/company/prome-consultants-limited/posts/?feedView=all"target="_blank" class="linkedin-logo">
+                <img src="in.png" alt="X/Twitter"> 
+        </a>
+           
+            <p>@Copyright Reserved 2025</p>
+            
+              
+            </a>
+          </div>
+            
+        </div>
+      </footer>
+   
+      <script>
+        document.getElementById('open-chatbox').addEventListener('click', function() {
+    document.querySelector('.chatbox-container').style.display = 'flex';
+    this.style.display = 'none';
+});
+
+document.getElementById('close-chatbox').addEventListener('click', function() {
+    document.querySelector('.chatbox-container').style.display = 'none';
+    document.getElementById('open-chatbox').style.display = 'block';
+});
+
+document.getElementById('send-message').addEventListener('click', function() {
+    const input = document.getElementById('chat-input');
+    const message = input.value.trim();
+    if (message) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.textContent = message;
+        document.querySelector('.messages').appendChild(messageElement);
+        input.value = '';
+    }
+});
+
+      </script>
+    </body>
+    </footer>
+    
+</html>

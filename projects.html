@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prome Consultants Limited</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet"
+    type="text/css"
+    href="file:///C:/path/to/style.css">
+    <link rel ="stylesheet" href="style.css/style.css">
+    <style>
+        body {
+            background-color: white;
+            font-family: 'roboto',sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .logo img {
+    height: 50px; /* Adjust as needed, or use width instead */
+}
+        header {
+            background-color: whitesmoke;
+            padding: 10px;
+            text-align: center;}
+            
+        .header-buttons button{
+            padding: 10px 20px;
+            background-color: #bb0a0a;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .header-buttons button:hover {
+            background-color: #630303;
+        }
+        /* Add styles for the map container */
+        #map {
+            height: 500px; /* Adjust as needed */
+            width: 100%;
+        } 
+        .search-bar {
+            padding: 20px;
+            text-align: center;
+            margin: 20px auto;
+            width: 50%;
+        }
+        .search-bar input {
+            padding: 10px;
+            font-size: 16px;
+            width: 70%;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .search-bar input:focus {
+            border-color: #555;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            outline: none;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-left: 10px;
+            background-color: #bb0a0a;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .search-bar button:hover {
+            background-color: #630303;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .footer-item.social-media {
+    text-align: center;
+}
+
+.footer-item.social-media a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.footer-item.social-media img {
+    width: 20px; /* Adjust size as needed */
+    height: auto;
+    vertical-align: middle;
+}
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="prome.png" alt="Your Logo">
+        </div>
+       
+    <div class="header-buttons">
+        <a href="home.html"><button id="home-btn">Home</button></a>
+        <a href="about us.html"><button id="About-us-btn">About Us</button></a>
+        <a href="sectors.html"><button id="Sectors-btn">Sectors</button></a>
+        <a href="projects.html"><button id="Projects">Projects</button></a>
+        <a href="services.html"><button id="Services">Services</button></a>
+        </div>
+    </header>
+    <main>
+        <h1 style="font-weight: bold; color: #bb0a0a;">Projects</h1>
+        <p>Our work spans across East Africa, covering a range of infrastructure projects, including roads, bridges, and buildings. As a project management and engineering consultancy firm, we are involved in planning, supervision, and execution, ensuring projects meet technical and regulatory standards.</p> <p>Explore our ongoing and completed projects to gain insight into the scope and impact of our work.</p>
+         <p>Use the search bar below to find specific projects or browse through our portfolio.</p>
+        <!-- Search bar -->
+         <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for a project...">
+            <button onclick="searchProject()">Search</button>
+        </div>
+
+        <!-- Add the map container -->
+        <div id="map"></div>
+
+        <!-- Your existing content sections -->
+    </main>
+    <footer style="background-color: whitesmoke;">
+        <hr>
+        
+        patienceaman09@gmail.com<br>
+        &copy; 2024 Copyright Reserved<br>
+    </footer>
+
+    <!-- Include Leaflet.js -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Sample project data
+        const projects = [
+            
+            {lat: 0.347596, lng: 32.582520, url: 'Kampala Outer Beltway 2019/06/25.html', title: 'Kampala Outer Beltway 2019/06/25'},
+            {lat: 0.3175, lng:32.59428, url: 'Infrastructure Supervision.html', title: 'Infrastructure Supervision'},
+           
+            {lat:0.3175, lng:32.59428,url: 'Institutional Development support.html', title: 'Institutional Development support'},
+            
+        
+            {lat: 0.31764, lng:32.5890, url: '03.html', title: 'Project Development and Management'},
+            {lat:0.3411, lng:32.5769, url:'04.html', title: 'Project Planning and Design'},
+            {lat:0.4016398, lng:32.043969, url:'05.html', title:'Consultancy Services For Feasbility and Detailed Engineering Design'},
+            {lat:0.2581,lng:30.5279,url:'06.html', title:'Data collection on the unpaved road in western uganda'},
+            {lat:0.3196,lng:32.6447,url:'07.html',title:'Provision of Engineering Consultancy Services for the design of mutungo hill road'},
+            {lat:0.0512,lng:32.6447,url:'08.html', title:'Consultancy services for Engineering Designs, preparation of environmental and social impact assements and plans'},
+            {lat:4.8950,lng:38.1002,url:'09.html',title:'Consultancy services for the construction supervision of konso-yabello road'},
+            {lat: 5.3398,lng:37.4418,url:'10.html', title:'Consultancy services for the construction supervision of konso-yabello road'},
+            {lat:0.3576,lng:32.5571,url:'11.html',title:'Construction supervision of the upgrading of Nyakaita-kazo road'},
+            {lat:2.7724,lng:32.2881,url:'12.html', title:'Construction supervision of the upgrading of gulu-Acholibur road'},
+            {lat:0.2807,lng:32.5404,url:'kcca.html',title:'Framework contract for the provision of road engineering consultancy services for upgrading of roads in Kampala Capital City Authority for Mutundwe RD, Weraga RD,Wasoso RD under lot 2 '},
+            {lat:0.3218,lng: 32.5795,url:'Nakasero route.html',title:'Consultancy services for feasbility study and detailed engineering design of VVIP express route [Nakasero-Kampala Northern Bypass to Nakasero route]'},
+            {lat:0.330278,lng:32.61944,url:'URA.html', title:'Consultancy services for design and supvision of the Uganda Revenue Authority Head Quaters in Kampala'},
+            {lat:0.3765,lng:33.2588,url:'buvuma.html',title:'Consultancy services for landing sites at Buvuma and Kiyindi'},
+            {lat:7.8570, lng:36.5824, url:'13.html',title:'Consultancy services for construction supervision of Jima-Agaro-Deddesa river road upgrading project'},
+            
+            {lat:0.4863900, lng:32.5311500, url:'lot 2.html', title:'Design update and construction of selected city roads lot 2'},
+            {lat:-0.9500,lng:29.7833, url:'kanungu bridge.html ',title:'Design review and construction supervision of the design and build of Ntungwe,Mitaano,Birara bridges in Kanungu/Rukungiri districts'},
+            {lat:1.6331,lng:33.9527,url:'ferry.html', title:'Construction and supervision of ferry landing sites on lake binisa at Okokorio and A gule'},
+            {lat:0.8435100, lng:30.2245900, url:'itojo.html', title:'Detailed Engineering Designs for Upgrading of Itojo-Sempaya Road from Gravel to Bitumen Standards Length: 20km'},
+            {lat:3.0303, lng:30.9073, url:'oraba road.html', title:'Upgrading of Vurra-Arua-Oraba RoadLength: 100km'},
+            {lat:-0.00825, lng:31.35513, url:'sembabule.html', title:'Upgrading Roads to Bitumen Standards Lot C: Masaka-Bukakata, Mpigi-Maddu-Sembabule, Mukono-Kyetume-Katosi/Kisoga-Nyenga; and Villa Maria-Ssembabule roads.Length: 350km'},
+            {lat:1.9167, lng:34.6667, url:'nakap.html', title:'Upgrading Roads to Bitumen Standards Lot B: Muyembe-Nakapiripirit-Moroto-Kotido and Soroti-Katakwi-Moroto-Loktanyala Length: 500km'},
+            {lat:3.27833, lng:32.88667, url:'kitgum.html', title:'Upgrading Roads to Bitumen Standards Lot A: Rwenkunye-Apac-Lira-Kitgum-Musingo and Olwiyo-Gulu-Kitgum.Length 450km'},
+            {lat:3.5200, lng:34.1200, url:'kaabong.html', title:'Feasibility Study and Detailed Engineering designs for Upgrading of Kaabong-Sudan Border Road from Gravel to Bituminous Standard Length: 44km'},
+            {lat:0.0500, lng:32.4600, url:'entebbe.html', title:'Design and Build of the Kampala-Entebbe Expressway Length: 51km'},
+            {lat:0.23776, lng:32.43805, url:'kasaje.html', title:'Feasibility Study, Detailed Engineering Design, Tender Assistance and Project Management for Upgrading Roads to Bituminous Standards(Lot C) – Addendum for Kisubi-Nakawuka (27 km), Nakawuka-Kasanje-Mpigi (20 km), Nakawuka-Mawagulu-Nanziga-Maya (15 km)and Kasaje-Buwaya Ferry (Lulongo) (9 km).'},
+            {lat:0.450272, lng:33.185558, url:'kiira.html', title:'Call order No.4 Frame work contract for provision of Road engineering consultancy services setting out/establishment of road extents and channel reserves for specific roads (Makerehill road, Mambule road,Kira road and Hoima roads) and drainage channels( Nalukolongo and Primary drains)'},
+            {lat:0.3196, lng:32.6447, url:'mutunga.html',title:'Call off order under a framework contract for the provision of Engineering Consultancy Services for the Design of Mutungo Hill Road'},
+            {lat:0.2900, lng:32.6540, url:'port bell.html', title:'Call off order under a framework contract for the provision of Engineering Consultancy Services for Review and Update of the Engineering Design, for dualling of the New Port bell Road and Kasubi- Kampala-Northern Bypass Road'},
+            {lat:0.553901,lng:31.388468,url:'entebbe mubende.html', title:'Consultancy Services For Engineering Designs, Preparation Of Environmental And Social Impact Assessments & Plans, Resettlement Action Plans And Tender Assistance For Urban Infrastructure Investments In Program Municipalities:Cluster 5: (ENTEBBE, MUBENDE, MASAKA)'},
+            {lat:0.9667, lng:29.6000, url:'buhoma.html', title:'Consultancy Services for Feasibility Study and Detailed Engineering Design of selected National Roads(8lots),Lot 3:Humurwa-Kerere- Kanungu-Kanyantorogo- Butogota-Buhoma/ Hamayanja-Ifasha-Ikuma Road (143)'},
+            {lat:0.1716, lng:31.9061, url:'kanoni.html', title:'Consultancy Services for Feasibility Study and Detailed Engineering Design-Lot 1:Kanoni-Misigi-Mityana(39km) and Bombo-Ndejje-Kalasa (19km'},
+         
+            {lat:0.9401,lng:30.8126, url:'kagadi.html', title:'Supervision of the design and Build contract for Mubende Kakumiro Kibaale-Kagadi Road Length: 107km'},
+            
+            {lat:12.5055, lng:39.5227, url:'korem.html', title:'Consultancy Services for Construction Supervision of Korem – Sekota – Abi Adi Design and Build '},
+            {lat:0.3087, lng:32.5479, url:'lubaga.html', title:'Design Update and Construction of Selected City Roads Lot 2: Construction and Upgrading of Jakaana Road (0.65Km), Nsoba Road (0.75Km), Kafeero Road (0.8Km), Muganzi-Awongera (1.6Km) and Waligo Road (4.2Km), in Kawempe Division and Bakuli market lane (1.0 Km), Nakibinge-Bawalakata Road (2.9Km), Sembera Road (1.5Km), and Box Culvert at Sembule and Nalukolongo Channel in Lubaga Division'},
+            {lat:0.3566, lng:32.5828, url:'kyebando.html',title:'Design review and Construction Supervision of the upgrading of Lugoba Road (3.85Km), Bahai Road (2.85Km), Kawala Road (2.0Km)and Kyebando Central Road (1.0Km) in Kawempe Division'},
+            {lat:0.3802, lng:32.5571, url:'kawempe.html', title:'Design review and Construction Supervision of the upgrading of Lugoba Road (3.85Km), Bahai Road (2.85Km), Kawala Road (2.0Km)and Kyebando Central Road (1.0Km) in Kawempe Division'},
+            {lat:0.2903, lng:30.5740, url:'kamwengye.html', title:'Construction Supervision of the Upgrading of Kazo-Kamwenge Road Length: 78km of the Upgrading of Kazo-Kamwenge Road Length: 78km'},
+            {lat:0.6782, lng:34.1866, url:'tororo.html', title:'Construction Supervision of the Upgrading of Kazo-Kamwenge Road Length: 78km'},
+            {lat:3.6500, lng:31.7190, url:'moyo.html', title:'Consultancy Services for Supervision of Construction of Bridge Structures, Box Culverts and Ferry Landing Sites Along Atiak-Moyo-Afoji Road'},
+            
+            {lat:0.2812700, lng:32.5982300, url:'lukuli.html', title:'Framework contract for the provision of Road engineering consultancy services for Reconstruction/Upgrading of roads in Kampala Capital City Authority: Call off order for the Design of Lukuli Naganda Road'},
+            {lat:0.4409481,lng:32.5982300,url:'kasagati.html',title:'Feasibility Study and Detailed Engineering Design for the Upgrading of Kira-Kasangati-Matugga Road (15km) and Upgrading of Kulambiro Ring Road (7km)'},
+            {lat:0.3553,lng:32.6925, url:'namanve.html', title:'Detailed Engineering Design of Roads in the Kampala Industrial and Business Park (KIBP) at Namanve (34km)'},
+            {lat:3.771389, lng:33.199722, url:'musingo.html', title:'Consultancy Services for Detailed Engineering Design for the Upgrading of Gulu-Musingo Road (30km)'},
+            {lat:0.6291300,lng:33.5184200, url:'nakalama.html', title:'Consultancy Services for the Feasibility Study and Detailed Engineering Design for the Upgrading of Nakalama-Tirinyi-Kamonkoli Road (65km)'},
+            {lat:2.1913, lng:31.4028, url:'wanseko.html', title:'Consultancy Services for the Feasibility Study and Detailed Engineering Design for the Upgrading of Hoima-Butiaba-Wanseko Road (111km'},
+            {lat:0.34653331, lng:32.6055, url:'naguru.html', title:'Consultancy Services For Engineering Designs of Naguru Road, Clement Hill Road, Mwanga II road, Musajja-Alumbwa Road, and Burton Street'},
+            {lat:0.3269, lng:32.5795, url:'nakasero.html', title:'Consultancy Services for Feasibility Study and Detailed Engineering Design of the Nakasero-Northern Bypass Express Route '},
+            {lat:0.3375, lng:32.6469, url:'kireka.html', title:'Consultancy services for the supervision of the rehabilitation of Silver Springs – Bweyogerere road (8km) and Kireka – Namugongo road (7km)'},
+            {lat: 0.3802, lng:32.5828, url:'kawempe2.html', title:'Call order No.3 Framework contract for provision of Road engineering consultancy services for Reconstruction/ Upgrading of roads in Rubaga and Kawempe Division'},
+            {lat: 0.3152, lng:32.5816, url:'northern.html', title:'Construction supervision of the Kampala Northern Bypass.'},
+            {lat: 0.4479, lng:33.2026, url:'jinja.html', title:'Construction Supervision of the Reconstruction of Tororo-Mbale Soroti (160Km) and Mukono-Jinja Road (54Km)'},
+            {lat: 1.4425, lng:30.9085, url:'sebagaro.html', title:'Tullow social investment projects – kyehoro & sebagoro health centre iii '},
+            {lat: 0.5424, lng:30.1965, url:'bushenyi.html', title:'Consultancy Services for the Supervision of Maintenance Works on Selected National Roads '},
+            {lat: 6.80619, lng:29.67742, url:'kaya.html', title:' Supervision of Road Repairs from Kaya to Rumbek in South Sudan '},
+            {lat: 0.5671, lng:33.7462, url:'bugiri.html', title:'Supervision of the Re-Construction of  Jinja-Bugiri Road  '},
+            {lat: 25.8914, lng:32.6054, url:'goba.html', title:'CONSULTANCY SERVICES FOR SUPERVISION OF IMPAPUTO-GOBA ROAD PROJECT  '},
+            {lat: 0.31628, lng:32.58219, url:'kampala.html', title:' CONSULTANCY SERVICES FOR SUPERVISION AND FOR PROJECT AUDIT OF WORKS FOR REGRAVELLING, RESEALING AND UPGRADING OF ROADS IN CENTRAL UGANDA LOT 1 (A&B) '},
+            {lat: -1.2486, lng:29.9899, url:'kabale.html', title:' FEASIBILITY STUDY ON STRENGTHENING AND IMPROVEMENT OF THE NORTHERN CORRIDOR  '},
+            {lat: 2.254445, lng:32.243611, url:'karuma.html', title:' RESEALING AND REHABILITATION OF KAFU – KARUMA ROAD  '},
+            {lat: -1.422778, lng:30.010833, url:'katuna.html', title:'  Resealing and Rehabilitation of Kafu – Karuma Road '},
+            {lat: 0.299167, lng:32.588056, url:'nsambya.html', title:' CONSULTANCY SERVICES FOR FEASIBILITY STUDY AND DETAILED ENGINEERING DESIGN OF KAMPALA OUTER BELTWAY   '},
+            {lat: 0.654444, lng:30.274444, url:'fortportal.html', title:' Consultancy Services for Preparing Engineering Designs, Environmental Assessments and Resettlement Action Plan for Infrastructure Sub Projects in 14 Municipalities   '},
+            {lat: 2.11781, lng:31.41163, url:'buliisa.html', title:' Consultancy Services for Carrying out Topographical Surveys, Geotechnical and Geo-Electrical  Surveys  at the Oil Fields in Kasamene, Bulisa District   '},
+            {lat: 1.373333, lng:32.290275, url:'uganda.html', title:'  Consultancy Services for Production of Driver Training Manual Handbook, a Companion Video/DVD, the Driving Test and Regulations to Control and Regulate Driving Schools, Driving Instructors and Examiners in Uganda   '},
+            {lat: 0.5204, lng:35.2699, url:'kenya.html', title:'  FEASIBILITY STUDY FOR PETROLEUM PRODUCTS PIPELINE FROM ELDORET TO KAMPALA   '},
+            {lat: 1.373333, lng:32.290275, url:'ugand.html', title:' Consultancy Services for National data Collection & Road Management Information System (RMS)  '},
+            {lat: 0.31628, lng:32.58219, url:'kampal.html', title:' Consultancy Services for Development of Design Standards and Manuals for Construction and Maintenance of Urban Roads  '},
+            {lat: 1.4652, lng:33.3486, url:'serere.html', title:' Consultancy Services for a Framework Contract for Feasibility Studies, Preliminary Engineering Desings, and Detailed Engineering Designs for Three (03) Years Soroti-Serere-Pingire-Mugarama Road (64km) and Kituuma-Kapeeka-Butalangu (37km)  '},
+            {lat: 0.039722, lng:32.448056, url:'uca.html', title:'  Consultancy Services for Design of Access Road to Newrest, Additional Lanes into Toll Station and Junction '},
+            {lat: 0.6121, lng:30.6373, url:'mba.html', title:'  Consultancy Services For a 3-Year Framework Contract For Data Collection on the Unpaved National Road NetworkLot 5: Western Region  '},
+            {lat: 0.31184, lng:32.64984, url:'zone.html', title:'  Call off order under a framework contract for the provision of Engineering Consultancy Services for the Design of Mutungo Hill Road   '},
+          {lat: 0.3208, lng: 32.2937, url: 'kala.html', title: 'Consultancy Services for Detailed Engineering Design of Luku-KalangalaMulabana road (65.6km) to Bituminous Standards: Addendum for Detailed Design of Kalangala Town Roads (11km) and 2 no. Landing Sites'},
+            
+            
+            
+            
+            
+
+
+
+
+
+
+            
+            // Add more projects here
+        ];
+
+        // Function to initialize the map
+        function initMap() {
+            // Initialize the map centered on Uganda
+            const map = L.map('map').setView([1.3733, 32.2903], 7);
+
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Add markers for each project
+            projects.forEach(project => {
+                const marker = L.marker([project.lat, project.lng]).addTo(map)
+                    .bindPopup(`<b>${project.title}</b><br><a href="${project.url}">View Project</a>`);
+            });
+        }
+
+        let map;
+        let markers = [];
+
+        function initMap() {
+            map = L.map('map').setView([1.3733, 32.2903], 7);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            projects.forEach(project => {
+                const marker = L.marker([project.lat, project.lng]).addTo(map)
+                    .bindPopup(`<b>${project.title}</b><br><a href="${project.url}">View Project</a>`);
+                markers.push(marker);
+            });
+        }
+
+        function searchProject() {
+            const searchInput = document.getElementById('search-input').value.toLowerCase();
+            const project = projects.find(p => p.title.toLowerCase().includes(searchInput));
+
+            if (project) {
+                map.setView([project.lat, project.lng], 13);
+                const marker = L.marker([project.lat, project.lng]).addTo(map)
+                    .bindPopup(`<b>${project.title}</b><br><a href="${project.url}">View Project</a>`).openPopup();
+            } else {
+                alert('Project not found');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initMap);
+
+        // Initialize the map after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', initMap);
+
+
+    </script>
+</body>
+
+<footer>
+    <div class="footer-container">
+      <div class="footer-item contact-info">
+        <h3>Contact Us</h3>
+        <p>Prome Consultants Limited</p>
+        <p>Innovations House, Plot 7B Acacia/Babiha Avenue</p>
+        <p>P.O. Box 24934, Kampala, Uganda</p>
+        <p>Phone: +256 (0) 414 345543/4</p>
+        <p>Email: info@promeconsultants.com</p>
+      </div>
+      <div class="footer-item map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.2673081240484!2d32.60128461702619!3d0.3198826736938728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbba4453c43d1%3A0xa23ec27a5a5ff4e9!2sProme%20Consultants%20Limited!5e0!3m2!1sen!2sug!4v1620121241407!5m2!1sen!2sug" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="footer-item social-media">
+        <h3>Follow Us</h3>
+        
+        <a href="https://www.linkedin.com/company/prome-consultants-limited/posts/?feedView=all"target="_blank" class="linkedin-logo">
+            <img src="in.png" alt="X/Twitter"> 
+    </a>
+       
+        <p>@Copyright Reserved 2025</p>
+        
+          
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</html>

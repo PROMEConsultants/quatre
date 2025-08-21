@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sectors-Prome Consultants Limited</title>
+    <link rel="stylesheet"
+    type="text/css"
+    href="file:///C:/path/to/style.css">
+    <link rel ="stylesheet" href="style.css/style.css">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    </head>
+    
+    <style>
+        body {
+    background-color: white;
+    font-family: 'Roboto', sans-serif; /* Ensure Roboto is applied here */
+    margin: 0;
+    padding: 20px;
+    font-size: 10px;
+}
+
+        .logo img {
+    height: 50px; /* Adjust as needed, or use width instead */
+}
+        header {
+            background-color: whitesmoke;
+            padding: 10px;
+            text-align: center;}
+            
+        .header-buttons button{
+            padding: 10px 20px;
+            background-color: #bb0a0a;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .header-buttons button:hover {
+            background-color: #630303;
+        }
+       
+        
+        .icon-grid{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .icon-box{
+            text-align: center;
+            background-color: whitesmoke;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .icon-box img{
+            max-width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .icon-box .main-paragraph{
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .icon-box .sub-paragraph{
+            font-size:7px;
+            font-weight: normal;
+        }
+        .icon-box li{
+            list-style-type:none;
+        }
+        .icon-box li{
+            list-style-type: none;
+        }
+
+        .paragraph-container{
+            display: block;
+            margin-bottom: 20px;
+        }
+        .read-more-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color:red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .read-more-btn:hover {
+            background-color: rgb(62, 27, 27);
+        }
+        .header-buttons a{
+            margin: 0 10px;
+        }
+        
+      
+        .chatbox-container {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.chatbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+}
+
+.chatbox-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+/* Main Grid Styling */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 30px 0;
+}
+
+/* Box Styling */
+.icon-box {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.icon-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image and Icon Styling */
+.icon-box img {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px; /* Set maximum height for images */
+    margin-bottom: 20px;
+}
+
+/* Header Styling */
+.section-title {
+    font-size: large; /* Bigger font size */
+    color: #bb0a0a;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: 'roboto', sans-serif;
+}
+
+/* Sub-Paragraph Styling */
+.sub-paragraph {
+    font-size: large; /* Increase font size */
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6; /* Increase line height for readability */
+}
+
+/* List Styling */
+.services-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: medium; /* Larger font size for list items */
+    color: #555;
+}
+
+.services-list li {
+    margin-bottom: 12px; /* Increase space between list items */
+    line-height: 1.6; /* Increase line height for readability */
+}
+
+/* Chatbox Styling */
+.chatbox-container {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px; /* Increase width */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 1.2em; /* Larger font size for chatbox */
+}
+
+.chatbox-header {
+    background-color: #bb0a0a;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.5em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chatbox-body {
+    padding: 15px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.chatbox-footer {
+    display: flex;
+    padding: 15px;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-right: 15px;
+    font-size: 1.2em; /* Larger font size for input */
+}
+
+#send-message {
+    padding: 15px;
+    background-color: #bb0a0a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2em; /* Larger font size for button */
+}
+
+#send-message:hover {
+    background-color: #9b0808;
+}
+
+#open-chatbox {
+    background-color: #bb0a0a;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    font-size: 1.3em; /* Larger font size for chat button */
+}
+
+#open-chatbox:hover {
+    background-color: #9b0808;
+}
+
+.footer-item.social-media {
+    text-align: center;
+}
+
+.footer-item.social-media a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.footer-item.social-media img {
+    width: 20px; /* Adjust size as needed */
+    height: auto;
+    vertical-align: middle;
+}
+
+
+    </style>
+
+</head>
+<body>
+
+    <header class="navigation">
+        <div class="logo">
+            <img src="prome.png" alt="Your Logo">
+        </div>
+        <div class="header-buttons">
+        <div class="header-buttons">
+        <nav>
+            <ul class="nav-links">
+        <a href="home.html"><button id="home-btn">Home</button></a>
+        <a href="about us.html"><button id="About-us-btn">About Us</button></a>
+        <a href="sectors.html"><button id="Sectors-btn">Sectors</button></a>
+        <a href="projects.html"><button id="Projects">Projects</button></a>
+        <a href="Services.html"><button id="Contact us">Services</button></a>
+       
+        </ul>
+        </nav>
+        </div>
+    </header>
+    <main>
+        <main>
+            
+            <p class="sub-paragraph" style="font-family: 'Roboto', sans-serif; font-weight: 1000;">
+                At PROME CONSULTANTS LIMITED, we pride ourselves on delivering exceptional Engineering consulting and project management services that span a diverse range of industries. With deep expertise across key sectors such as advisory, energy, transport, water, infrastructure, and buildings, we are committed to providing innovative and strategic solutions that meet the evolving needs of our clients. Whether it’s through effective project management, sustainable energy solutions, or cutting-edge infrastructure development, we leverage our extensive knowledge and experience to drive success and deliver value across all our engagements.
+            </p>
+            
+            <div class="icon-grid">
+                <div class="icon-box">
+                    <img src="prome 2.JPG" alt="geograpical">
+                    <h3 class="section-title">TRANSPORT</h3>
+                    <ul class="services-list">
+                        <li>Traffic Management Strategy</li>
+                        <li>Highways and Bridges</li>
+                        <li>Rail and Metros</li>
+                        <li>Demand Forecasting</li>
+                    
+                </div>
+        
+                <div class="icon-box">
+                    <i class="fa-solid fa-user-group"></i>
+                    <img src="telcommasts.png" alt="justtalking">
+                    <h3 class="section-title">ENERGY</h3>
+                    <ul class="services-list">
+                        <li>Oil and Gas</li>
+                        <li>Transmission and Distribution</li>
+                        <li>Renewable Energy</li>
+                        <li>Hydropower</li>
+                    </ul>
+                    
+                </div>
+                
+        
+                <div class="icon-box">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <i class="fa-brands fa-edgecast"></i>
+                    <img src="justtalking.png" alt="telcommasts">
+                    <h3 class="section-title">ADVISORY</h3>
+
+                    <ul class="services-list">
+                        <li>Project and Contract Management</li>
+                        <li>Infrastructure Finance</li>
+                        <li>Project Funding Strategies</li>
+                    </ul>
+                  
+                   
+                </div>
+        
+                <div class="icon-box">
+                    <i class="fa-solid fa-desktop"></i>
+                    <img src="irrigation.png" alt="cameras">
+                    <h3 class="section-title">WATER</h3>
+                    <ul class="services-list">
+                        <li>Hydrological Assessments</li>
+                        <li>Ground Water Resource Planning</li>
+                        <li>Irrigation and Drainage</li>
+                        <li>Waste Water Management</li>
+                    </ul>
+                </div>
+                <div class="icon-box">
+                    <i class="fa-solid fa-desktop"></i>
+                  
+                    <img src="build.png" alt="telcommasts">
+                    <h3 class="section-title">BUILDINGS</h3>
+                    <ul class="services-list">
+                        <li>Transport Interchanges</li>
+                        <li>Hotels and Retail</li>
+                        <li>Commercial</li>
+                        <li>Residential</li>
+                    </ul>
+                    
+                   
+                    
+               
+                    </ul>
+                </div>
+            </div>
+        
+            
+        
+          
+        </main>
+        
+    
+           
+
+</main>
+    </main>
+    <footer>
+            <hr>
+           
+            <footer>
+                <div class="footer-container">
+                  <div class="footer-item contact-info">
+                    <h3>Contact Us</h3>
+                    <p>Prome Consultants Limited</p>
+                    <p>Innovations House, Plot 7B Acacia/Babiha Avenue</p>
+                    <p>P.O. Box 24934, Kampala, Uganda</p>
+                    <p>Phone: +256 (0) 414 345543/4</p>
+                    <p>Email: info@promeconsultants.com</p>
+                  </div>
+                  <div class="footer-item map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.2673081240484!2d32.60128461702619!3d0.3198826736938728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbba4453c43d1%3A0xa23ec27a5a5ff4e9!2sProme%20Consultants%20Limited!5e0!3m2!1sen!2sug!4v1620121241407!5m2!1sen!2sug" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                  </div>
+                  
+                   
+                    
+                    <div class="footer-item social-media">
+                        <h3>Follow Us</h3>
+                        
+                        <a href="https://www.linkedin.com/company/prome-consultants-limited/posts/?feedView=all"target="_blank" class="linkedin-logo">
+                            <img src="in.png" alt="X/Twitter"> 
+                    </a>
+                       
+                        <p>@Copyright Reserved 2025</p>
+                        
+                          
+                        </a>
+                      </div>
+                   
+                    
+                </div>
+              </footer>
+              
+            </footer>
+        <hr>
+    </footer>
+    <script>
+    document.getElementById('open-chatbox').addEventListener('click', function() {
+        document.querySelector('.chatbox-container').style.display = 'flex';
+        this.style.display = 'none';
+    });
+    
+    document.getElementById('close-chatbox').addEventListener('click', function() {
+        document.querySelector('.chatbox-container').style.display = 'none';
+        document.getElementById('open-chatbox').style.display = 'block';
+    });
+    
+    document.getElementById('send-message').addEventListener('click', function() {
+        const input = document.getElementById('chat-input');
+        const message = input.value.trim();
+        if (message) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.textContent = message;
+            document.querySelector('.messages').appendChild(messageElement);
+            input.value = '';
+        }
+    });
+    </script>
+    
+</body>
+</html>

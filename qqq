@@ -1,0 +1,40 @@
+<?php
+session_start();
+
+// Create a connection to the database
+$conn = new mysqli('localhost', 'root', '', 'signin');
+
+// Check connection
+if ($conn->connect_error) {
+    die('Connection failed: ' . $conn->connect_error);
+}
+
+// Check if the form was submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Retrieve form data and sanitize it
+    $FirstName = $_POST['FirstName'] ?? '';
+    $Password = $_POST['Password'] ?? '';
+
+    
+    $FirstName = $_POST['FirstName'];
+    $Password = $_POST['Password'];
+
+    $result = mysqli_query($conn,"SELECT * FROM signin WHERE firstname='".$_POST['FirstName']."' AND presetpassword='".$_POST['Password']."' ");
+          
+    $row = mysqli_fetch_assoc($result);
+    
+   
+    if ($row['username'] == $_POST['username'] && $row['password'] == $_POST['password'] && $row['role'] == 'admin') {
+        $_SESSION['logged_in'] = true;
+        header('Location: protectedadmin.php'); // Redirect to a protected page
+        exit();
+    } elseif($row['username'] == $_POST['username'] && $row['password'] == $_POST['password'] && $row['role'] == 'staff'){
+        header('Location: protected.php'); // Redirect to form.php page
+        exit();
+    } else{
+        header('Location: forms.html'); // Redirect to form.php page
+        exit();
+    }
+    }
+?>

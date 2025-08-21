@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional Development Support</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color:white;
+        }
+        header {
+            background-color: whitesmoke;
+            color: #bb0a0a;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #b4a4a4;
+        }
+        main {
+            padding: 20px;
+        }
+       
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+        .slides {
+            display: none;
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Institutional Development Support</h1>
+    </header>
+    <main>
+        <h3>Project Duration</h3>
+        <p>2018 November</p>
+        
+        <h3>Project Objectives</h3>
+        <p>Consultancy services for the development of design standards and manuals for construction and maintenance of urban roads.</p>
+        <p>Technical support unit for the District of Lira, Kumi, Nakapiripit, Mbale, Katakwi, Soroti, Pallisa, Sironko, and Kapchorwa.</p>
+        <p>Development of the Uganda National Axle Load Control Policy.</p>
+        <p>Rural accessibility improvement project, Uganda.</p>
+        <p>Consultancy services for the preparation of the overview paper of the transport sector in the national economy and rapporteuring series, May 2004.</p>
+        <p>Road Sector Development Programme, Uganda Support to district road networks in northern Uganda.</p>
+        <p>Joint Annual Transport Sector Review.</p>
+        <p>The Uganda road agency study New Partnership for Africa’s Development, NEPAD, Uganda.</p>
+        <p>Baseline Survey of Non-Physical Barriers along the Northern Corridor.</p>
+        
+        <section id="slides">
+            <div class="slideshow-container">
+                <img class="slides active" src="that 1 road.png" alt="Slide 1">
+                <img class="slides" src="that 2 road.png" alt="Slide 2">
+                <img class="slides" src="labourers.png" alt="Slide 3">
+                <img class="slides" src="labourers 2.png" alt="Slide 4">
+                <img class="slides" src="officials.png" alt="Slide 5">
+            </div>
+        </section>
+        
+        </section>
+        <a href="projects.html" class="back-btn">Back to project</a>
+    </main>
+   
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].classList.add("active");
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    </script>
+</body>
+</html>

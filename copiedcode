@@ -1,0 +1,49 @@
+if (isset($_POST['submit'])) {  // Match 'submit' exactly
+    // File Handling
+    $file = $_FILES['fileToUpload'];
+    $games_image = $file['name'];
+    $games_tmp = $file['tmp_name'];
+
+    // Error handling: Check if the file was uploaded
+    if ($file['error'] !== UPLOAD_ERR_OK) {
+        die("Upload failed with error code " . $file['error']);
+    }
+
+    // Get file extension and create a new file name
+    $extension = pathinfo($games_image, PATHINFO_EXTENSION);
+    $fileName = pathinfo($games_image, PATHINFO_FILENAME) . '.' . $extension;
+
+    // Move the uploaded file to the 'documents' directory
+    if (move_uploaded_file($games_tmp, "documents/$fileName")) {
+        echo "File uploaded successfully!";
+    } else {
+        die("Failed to move uploaded file.");
+    }
+
+    // SQL Insertion
+    $timestamp = date('Y-m-d H:i:s'); // Add current timestamp
+    $filepath = "documents/$fileName"; // Define the filepath
+    $status = 'approved'; // Default status
+    
+    $sql = "INSERT INTO `approved_forms` (`id`, `filename`, `filepath`, `timestamp`, `status`) VALUES (NULL, '$fileName', '$filepath', '$timestamp', '$status')";
+
+    // Error handling: Check if the query is successful
+    if (mysqli_query($conn, $sql)) {
+        echo "Record inserted successfully!";
+        ?>
+        <script type="text/javascript" language="javascript">
+            window.location = "protected.php";
+        </script>
+        <?php
+    } else {
+        die("Error inserting record: " . mysqli_error($conn));
+    }
+}
+// Send notification to signers after form submission
+$signerEmails = ['patiencehamanya@gmail.com', 'signer2@example.com'];
+$subject = "New Form Awaiting Signature";
+$message = "A new form has been submitted. Please log in to review and sign.";
+
+foreach ($signerEmails as $email) {
+    mail($email, $subject, $message);
+}

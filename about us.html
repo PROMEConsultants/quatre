@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us-Prome Consultants Limited</title>
+    <link rel="stylesheet" href="about us.css">
+    <link rel="stylesheet"
+    type="text/css"
+    href="file:///C:/path/to/style.css">
+    <link rel ="stylesheet" href="style.css/style.css">
+    <style>
+        body {
+            background-color: white;
+            font-family: 'roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        
+
+        }
+        
+        
+        .navigation{
+            background-color: rgb(222, 20, 13);}
+        
+            header {
+            background-color: white;
+            padding: 20px;
+            text-align: center;}
+            
+        .header-buttons button{
+            padding: 10px 20px;
+            background-color: #bb0a0a;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .header-buttons button:hover {
+            background-color: #630303;
+        }
+        .logo img {
+    height: 50px; /* Adjust as needed, or use width instead */
+}
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333333;}
+
+            .container {
+                display: flex;
+                flex-direction: row;
+                height: calc(100vh-120px);
+            }
+            
+        .sidebar{
+            background-color:#bb0a0a;
+            padding: 20px;
+            width: 400px;
+            box-shadow: 0 2px 5px rgba(189, 54, 54, 0.1);
+            height: 100%;
+            position: sticky;
+            top: 0;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            text-align: center;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+            white-space: nowrap;
+        }
+        .sidebar a:hover {
+            background-color: #640505;
+        }
+        .main-content {
+
+            padding: 20px;
+            overflow-y: auto;
+            flex: 1;}
+
+            footer{
+                background-color: #bb0a0a;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            }
+            .contact-us-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color:#bb0a0a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .contact-us-btn:hover {
+            background-color: rgb(151, 6, 30);
+        }
+        footer {
+        background-color: blanchedalmond;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+    }
+    .footer-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .footer-item {
+        margin: 10px;
+    }
+    .chatbox-container {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.chatbox-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+}
+
+.chatbox-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chatbox-footer {
+    display: flex;
+    padding: 10px;
+    background-color: #2c0c0c;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ec0909;
+    border-radius: 5px;
+}
+
+#send-message {
+    padding: 10px 20px;
+    background-color: #f80636;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#open-chatbox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #005a81;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.footer-item.social-media {
+    text-align: center;
+}
+
+.footer-item.social-media a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.footer-item.social-media img {
+    width: 20px; /* Adjust size as needed */
+    height: auto;
+    vertical-align: middle;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="prome.png" alt="Your Logo">
+        </div>
+    <div class="header-buttons">
+        <a href="home.html"><button id="home-btn">Home</button></a>
+        <a href="about us.html"><button id="About-us-btn">About Us</button></a>
+        <a href="sectors.html"><button id="Sectors-btn">Sectors</button></a>
+        <a href="projects.html"><button id="Projects-btn">Projects</button></a>
+        <a href="services.html"><button id="service-btn">Services</button></a>
+        
+    </div>
+   </header>
+    <div class="container">
+    <!--Sidebar section-->
+    <div class="sidebar">
+        <h2>25 Years Of Experience</h2>
+
+<a href="vision.html">Vision and Mission</a>
+<a href="core values.html">Core Values</a>
+<a href="strategy.html">Our Strategy and Objectives</a>
+<a href="Memberships.html">Memberships</a>
+<a href="office.html">Our Offices</a>
+<a href="Contact us.html" class="contact-us-btn">Contact Us</a>
+
+</div>
+    <main>
+        <div class="main-content">
+            <h1 style="color: #bb0a0a;">About Us</h1>
+            <p style="margin-bottom: 20px;">PROME Consultants Limited is a knowledge-based firm engaged in the provision of Project Management and Engineering Consultancy Services and Solutions, particularly in the Built Environment.</p>
+            
+            <p style="margin-bottom: 20px;">PROME's overall value proposition is enshrined in its Mission Statement, which is <span style="color: #bb0a0a;" ><span style="font-style:italic;" >  to deliver innovative and sustainable quality Engineering and Technologically trending Digital solutions that more than satisfy customer needs as well as meeting the Company's values and objectives.”</span></p>
+            
+            <p style="margin-bottom: 20px;">Prome therefore delivers sustainable Innovative, Quality, Economical, Cost Effective, Reliable and Relevant Engineering and Technical and Digital Solutions and Project Management Services. PROME partners with its clientele to create solutions that satisfy the clientele's objectives.</p>
+            <div class="video-container">
+                <video autoplay muted loop>
+                    <source src="a.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            
+            <p style="margin-bottom: 20px; font-weight: bold; color: #bb0a0a;">PLANNING AND STRATEGY DIVISION [CPSD]</p>
+            <p style="margin-bottom: 20px;">Corporate Planning and Strategy Division offers strategic directional planning to the company in tandem with the global Trending Applicable Digital Technical Solutions and ensures appropriate collaborative external professional linkages and visibility in this regard. In addition, the Division maintains oversight into the workings of each of the company divisions to ensure delivery of integrated, holistic and innovative solutions to more than meet our Client's needs.</p>
+            <div class="video-container">
+                <video autoplay muted loop>
+                    <source src="bb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            
+            <p style="margin-bottom: 20px; font-weight: bold; color: #bb0a0a;">PROJECT MANAGEMENT AND BUSINESS DEVELOPMENT DIVISION [PMBDD]</p>
+            <p style="margin-bottom: 20px;">PROME’s Project Management and Business Development Division guarantees compliance of all company operations and outputs with International Quality management procedures and Client Specifications through exhaustive quality checks, and reviews as well as internal audits. The Division maintains the company’s MIS and is the custody of all the company’s technical records. In this regard, the PMBDO is responsible for the preparation of competitive, attractive and realistic technical proposals of the Company while ensuring maximum technical and financial benefit to the Client.</p>
+            <div class="video-container">
+                <video autoplay muted loop>
+                    <source src="c.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            
+            <p style="margin-bottom: 20px;">Furthermore, the division contracts out the Company's technical Project Management Services to the construction industry, which services include, but are not limited to, the following: (i) Value Engineering & Optimization; (ii) Claims Management; (iii) Cadastral Surveys & Valuations; (iv) Resettlement Action Planning; (v) Social/Environmental Studies; and (vi) Economic Studies</p>
+            
+            <p style="margin-bottom: 20px; font-weight: bold; color: #bb0a0a;">PLANNING AND ENGINEERING DIVISION [PED]</p>
+            <p style="margin-bottom: 20px;">PROME’s Planning and Engineering Division is the Company’s set-up that undertakes the planning, design and engineering of the infrastructure technological solutions of the built environment which are technically appropriate, economically justifiable, financially affordable, socially acceptable, environmentally responsible, and institutionally manageable.</p>
+            
+            <p style="margin-bottom: 20px;">These solutions include the following: Physical & Structural Planning; Transportation & Highways Engineering; and Water & Sanitation Engineering. The Division undertakes the planning design and engineering functions by using state-of-the-art and innovative technological applications and software for its technical surveys, technical engineering design, architecture, and space technologies. To ensure that the solutions more than meet our client's needs, the Division undertakes (i) Value Engineering & Optimization; (ii) Cadastral Surveys & Valuations; (iii) Resettlement Action Planning; (iv) Social/Environmental Studies; and (v) Economic Studies, as may be relevant to the executed design and engineering solutions.</p>
+            
+            <p style="margin-bottom: 20px;">Our Engineering designs stand out for their technical excellence. All of our engineers have a strong understanding of multiple design disciplines and believe in the importance of working closely with all teams on a project. This allows everyone to fully understand each other’s requirements and optimizes the design outcome.</p>
+            
+            <img src="b.jpg" alt="dashboard" style="width: 100%; max-width: 900px;display: block;margin: 20px auto;">
+            <p style="margin-bottom: 20px; font-weight: bold; color: #bb0a0a;">PROJECT DELIVERY MANAGEMENT DIVISION [PDMD]</p>
+            <p style="margin-bottom: 20px;">PROME’s Project Delivery Management Division is involved in the evolving projects delivery mechanisms and trends that include: PPP, EPC, DB EPC+F & BOOT Engagements. In this regard, the Division ensures efficient and effective delivery of fit-for-purpose, quality, and on-time construction management of the construction works within the available budget.</p>
+            
+            <p style="margin-bottom: 20px;">Our engineers have worked on large, global-scale projects and have witnessed firsthand how quickly project scopes and costs can increase because of unforeseen complexities, unexpected ground conditions, or lack of experience.</p>
+            
+            <!-- Example of where you could add an image or interactive element -->
+            <div style="text-align: center; margin-top: 40px;">
+             
+            
+            </div>
+            
+                            <img src="dashboard.png" alt="dashboard" style="width: 100%; max-width: 900px;display: block;margin: 20px auto;">
+    
+                            </div>
+                        </div>
+                    </div>
+                  
+                       
+    </main>
+    <script>
+    document.getElementById('open-chatbox').addEventListener('click', function() {
+        document.querySelector('.chatbox-container').style.display = 'flex';
+        this.style.display = 'none';
+    });
+    
+    document.getElementById('close-chatbox').addEventListener('click', function() {
+        document.querySelector('.chatbox-container').style.display = 'none';
+        document.getElementById('open-chatbox').style.display = 'block';
+    });
+    
+    document.getElementById('send-message').addEventListener('click', function() {
+        const input = document.getElementById('chat-input');
+        const message = input.value.trim();
+        if (message) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.textContent = message;
+            document.querySelector('.messages').appendChild(messageElement);
+            input.value = '';
+        }
+    });
+</script>
+
+    
+    </body>
+    
+    </html>

@@ -379,11 +379,30 @@ body, p, ul, li, a {
             border-radius: 10px;
         }
         
+        .footer-container {
+    display: flex;
+    justify-content: space-between; /* left, center, right */
+    align-items: flex-start; /* top-aligned */
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
+.footer-item {
+    flex: 1; /* equal width */
+    min-width: 250px; /* prevents shrinking too much */
+}
 
+.footer-item.contact-info {
+    text-align: left;
+}
 
-        .footer-item.social-media {
+.footer-item.map {
     text-align: center;
+}
+
+.footer-item.social-media {
+    text-align: right;
 }
 
 .footer-item.social-media a {
@@ -392,10 +411,11 @@ body, p, ul, li, a {
 }
 
 .footer-item.social-media img {
-    width: 20px; /* Adjust size as needed */
+    width: 20px;
     height: auto;
     vertical-align: middle;
 }
+
 
 
 
@@ -430,7 +450,7 @@ body, p, ul, li, a {
             <img src="d.jpg" alt="Slide 3">
             
             <img src="a.JPG" alt="Slide 4">
-            <img src="b.JPG" alt="Slide 5"
+           
             
             <!-- Motto overlay directly on the slideshow -->
             <div class="motto-overlay">
@@ -646,7 +666,7 @@ body, p, ul, li, a {
        
         
     </main>
-    <footer style="background-color: #b8afaf;">
+    
         <hr>
        
         <footer>

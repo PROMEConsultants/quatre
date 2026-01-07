@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(nextSlide, 5000);
     setInterval(nextImageSlide, 5000);
 });
-prome-consultants/
+Quatre-consultants/
  backend/ server.js
  package.json
  node_modules/

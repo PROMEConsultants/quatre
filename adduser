@@ -40,7 +40,7 @@ if (!$approved_result) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Prome Consultants Pdfs</title>
+    <title>Quatre Consultants Pdfs</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
         .container {
@@ -82,7 +82,7 @@ if (!$approved_result) {
 </head>
 <body>
     <div class="container">
-        <h1>Prome Consultants Forms</h1>
+        <h1>Quatre Consultants Forms</h1>
 
         <div class="content">
             <!-- Available Forms Section -->
@@ -294,12 +294,12 @@ $approved_result = $conn->query($approved_sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prome Consultants Forms</title>
+    <title>Quatre Consultants Forms</title>
     <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Prome Consultants Forms</h1>
+        <h1>Quatre Consultants Forms</h1>
 
         <div class="content">
             <div class="box">

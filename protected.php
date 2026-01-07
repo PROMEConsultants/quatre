@@ -42,7 +42,7 @@ if (!$approved_result) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Prome Consultants Pdfs</title>
+    <title>Quatre Consultants Pdfs</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
         .container {
@@ -84,7 +84,7 @@ if (!$approved_result) {
 </head>
 <body>
     <div class="container">
-        <h1>Prome Consultants Forms</h1>
+        <h1>Quatre Consultants Forms</h1>
 
         <div class="content">
             <!-- Available Forms Section -->

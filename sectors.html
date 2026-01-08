@@ -29,7 +29,7 @@
     height: 50px; /* Adjust as needed, or use width instead */
 }
         header {
-            background-color: whitesmoke;
+            background-color: white;
             padding: 10px;
             text-align: center;}
             
@@ -234,6 +234,17 @@
     margin-right: 15px;
     font-size: 1.2em; /* Larger font size for input */
 }
+.logo img {
+    display: block;
+    margin: 0 auto; /* ensures image stays centered */
+}
+
+.company-name {
+    margin-top: 10px; /* space below logo */
+    font-size: 18px;
+    font-weight: bold;
+    color: #bb0a0a;
+}
 
 #send-message {
     padding: 15px;
@@ -296,8 +307,9 @@
 <body>
 
     <header class="navigation">
-        <div class="logo">
+        <div class="logo" style="text-align: center;">
             <img src="images/Quatre Logo.png" alt="Your Logo">
+            <div class="company-name" style="font-size: small;">Quatre Project Management Services Limited</div>
         </div>
         <div class="header-buttons">
         <div class="header-buttons">
@@ -405,7 +417,7 @@
     <div class="footer-container">
         <div class="footer-item contact-info">
           <h3>Contact Us</h3>
-          <p>Quatre Consultants Limited</p>
+          <p>Quatre Project Management Services Limited</p>
           <p>Building A2, IFZA Dubai Digital Park, Dubai Silicon Oasis, Dubai, UAE</p>
          
           <p>Phone:+971 55 998 3356</p>

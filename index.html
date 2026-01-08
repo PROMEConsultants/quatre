@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Quatre Consultants delivers modern, process-driven, and multi-disciplinary infrastructure services, including construction supervision, energy studies, planning, surveying, and digital technology solutions.">
 <meta name="keywords" content="Quatre Consultants, infrastructure consultancy, construction supervision, energy development studies, physical planning, topographical surveys, cadastral surveys, geological surveys, environmental studies, transportation studies, digital solutions, engineering design, project management, Uganda">
-<meta name="author" content="Quatre Consultants Limited">
+<meta name="author" content="Quatre Project Management Services Limited">
 
-    <title>Quatre Consultants Limited</title>
+    <title>Quatre Project Management Services Limited</title>
     <link rel="stylesheet" href="./style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@ body, p, ul, li, a {
 
         }
         header {
-            background-color: whitesmoke;
+            background-color: white;
             padding: 20px;
             text-align: center;}
             
@@ -75,238 +75,12 @@ body, p, ul, li, a {
       overflow: auto;
     }
     
-    /* Slideshow container */
-    .slideshow {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-    .slideshow img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-    .slideshow img.active {
-      opacity: 1;
-    }
-    
-    /* Motto overlay (on top of the slideshow) */
-    .motto-overlay {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      color: white;
-      pointer-events: none;
-    }
     
     /* Header (“Welcome”) styling & animation */
-    .motto-header {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-    .motto-header span {
-      display: inline-block;
-      opacity: 0;
-      transform: scale(0.5);
-      animation: popIn 0.5s forwards;
-    }
-    /* Stagger each letter's animation */
-    .motto-header span:nth-child(1) { animation-delay: 0.3s; }
-    .motto-header span:nth-child(2) { animation-delay: 0.4s; }
-    .motto-header span:nth-child(3) { animation-delay: 0.5s; }
-    .motto-header span:nth-child(4) { animation-delay: 0.6s; }
-    .motto-header span:nth-child(5) { animation-delay: 0.7s; }
-    .motto-header span:nth-child(6) { animation-delay: 0.8s; }
-    .motto-header span:nth-child(7) { animation-delay: 0.9s; }
-    .header span:nth-child(8) { animation-delay: 11.5s; }
-.header span:nth-child(9) { animation-delay: 11.6s; }
-.header span:nth-child(103) { animation-delay: 11.7s; }
-.header span:nth-child(104) { animation-delay: 11.8s; }
-.header span:nth-child(105) { animation-delay: 11.9s; }
-.header span:nth-child(106) { animation-delay: 12.0s; }
-.header span:nth-child(107) { animation-delay: 12.1s; }
-.header span:nth-child(108) { animation-delay: 12.2s; }
-.header span:nth-child(109) { animation-delay: 12.3s; }
-.header span:nth-child(110) { animation-delay: 12.4s; }
-.header span:nth-child(111) { animation-delay: 12.5s; }
-.header span:nth-child(112) { animation-delay: 12.6s; }
-.header span:nth-child(113) { animation-delay: 12.7s; }
-.header span:nth-child(114) { animation-delay: 12.8s; }
-.header span:nth-child(115) { animation-delay: 12.9s; }
-.header span:nth-child(116) { animation-delay: 13.0s; }
-.header span:nth-child(117) { animation-delay: 13.1s; }
-.header span:nth-child(118) { animation-delay: 13.2s; }
-.header span:nth-child(119) { animation-delay: 13.3s; }
-.header span:nth-child(120) { animation-delay: 13.4s; }
-.header span:nth-child(121) { animation-delay: 13.5s; }
-.header span:nth-child(122) { animation-delay: 13.6s; }
-.header span:nth-child(123) { animation-delay: 13.7s; }
-.header span:nth-child(124) { animation-delay: 13.8s; }
 
-
-    @keyframes popIn {
-      0% { opacity: 0; transform: scale(0.5); }
-      70% { opacity: 1; transform: scale(1.2); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-    /* Underline effect for header */
-    .motto-header::after {
-      content: "";
-      display: block;
-      height: 3px;
-      background: maroon;
-      width: 0;
-      margin-top: 5px;
-      animation: underline 0.5s forwards;
-      animation-delay: 1s;
-    }
-    @keyframes underline {
-      to { width: 100%; }
-    }
     
     /* Paragraph styling & per-letter magnification */
-    .motto-paragraph {
-      font-size: 1.2em;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    }
-    .motto-paragraph span {
-      display: inline-block;
-      opacity: 0;
-      transform: scale(1);
-      animation: magnifyLetter 0.5s forwards;
-    }
-    /* Stagger delays for each letter in the paragraph.
-       Adjust the number of nth-child rules to match the letter count. */
-    .motto-paragraph span:nth-child(1) { animation-delay: 1.5s; }
-    .motto-paragraph span:nth-child(2) { animation-delay: 1.6s; }
-    .motto-paragraph span:nth-child(3) { animation-delay: 1.7s; }
-    .motto-paragraph span:nth-child(4) { animation-delay: 1.8s; }
-    .motto-paragraph span:nth-child(5) { animation-delay: 1.9s; }
-    .motto-paragraph span:nth-child(6) { animation-delay: 2.0s; }
-    .motto-paragraph span:nth-child(7) { animation-delay: 2.1s; }
-    .motto-paragraph span:nth-child(8) { animation-delay: 2.2s; }
-    .motto-paragraph span:nth-child(9) { animation-delay: 2.3s; }
-    .motto-paragraph span:nth-child(10) { animation-delay: 2.4s; }
-    .motto-paragraph span:nth-child(11) { animation-delay: 2.5s; }
-    .motto-paragraph span:nth-child(12) { animation-delay: 1.9s; }
-    .motto-paragraph span:nth-child(13) { animation-delay: 2.0s; }
-    .motto-paragraph span:nth-child(14) { animation-delay: 2.1s; }
-    .motto-paragraph span:nth-child(15) { animation-delay: 2.2s; }
-    .motto-paragraph span:nth-child(16) { animation-delay: 2.3s; }
-    .motto-paragraph span:nth-child(17) { animation-delay: 2.4s; }
-    .motto-paragraph span:nth-child(18) { animation-delay: 2.5s; }
-    .motto-paragraph span:nth-child(1) { animation-delay: 1.5s; }
-.motto-paragraph span:nth-child(2) { animation-delay: 1.6s; }
-.motto-paragraph span:nth-child(3) { animation-delay: 1.7s; }
-.motto-paragraph span:nth-child(4) { animation-delay: 1.8s; }
-.motto-paragraph span:nth-child(5) { animation-delay: 1.9s; }
-.motto-paragraph span:nth-child(6) { animation-delay: 2.0s; }
-.motto-paragraph span:nth-child(7) { animation-delay: 2.1s; }
-.motto-paragraph span:nth-child(8) { animation-delay: 2.2s; }
-.motto-paragraph span:nth-child(9) { animation-delay: 2.3s; }
-.motto-paragraph span:nth-child(10) { animation-delay: 2.4s; }
-.motto-paragraph span:nth-child(11) { animation-delay: 2.5s; }
-.motto-paragraph span:nth-child(12) { animation-delay: 2.6s; }
-.motto-paragraph span:nth-child(13) { animation-delay: 2.7s; }
-.motto-paragraph span:nth-child(14) { animation-delay: 2.8s; }
-.motto-paragraph span:nth-child(15) { animation-delay: 2.9s; }
-.motto-paragraph span:nth-child(16) { animation-delay: 3.0s; }
-.motto-paragraph span:nth-child(17) { animation-delay: 3.1s; }
-.motto-paragraph span:nth-child(18) { animation-delay: 3.2s; }
-.motto-paragraph span:nth-child(19) { animation-delay: 3.3s; }
-.motto-paragraph span:nth-child(20) { animation-delay: 3.4s; }
-.motto-paragraph span:nth-child(21) { animation-delay: 3.5s; }
-.motto-paragraph span:nth-child(22) { animation-delay: 3.6s; }
-.motto-paragraph span:nth-child(23) { animation-delay: 3.7s; }
-.motto-paragraph span:nth-child(24) { animation-delay: 3.8s; }
-.motto-paragraph span:nth-child(25) { animation-delay: 3.9s; }
-.motto-paragraph span:nth-child(26) { animation-delay: 4.0s; }
-.motto-paragraph span:nth-child(27) { animation-delay: 4.1s; }
-.motto-paragraph span:nth-child(28) { animation-delay: 4.2s; }
-.motto-paragraph span:nth-child(29) { animation-delay: 4.3s; }
-.motto-paragraph span:nth-child(30) { animation-delay: 4.4s; }
-.motto-paragraph span:nth-child(31) { animation-delay: 4.5s; }
-.motto-paragraph span:nth-child(32) { animation-delay: 4.6s; }
-.motto-paragraph span:nth-child(33) { animation-delay: 4.7s; }
-.motto-paragraph span:nth-child(34) { animation-delay: 4.8s; }
-.motto-paragraph span:nth-child(35) { animation-delay: 4.9s; }
-.motto-paragraph span:nth-child(36) { animation-delay: 5.0s; }
-.motto-paragraph span:nth-child(37) { animation-delay: 5.1s; }
-.motto-paragraph span:nth-child(38) { animation-delay: 5.2s; }
-.motto-paragraph span:nth-child(39) { animation-delay: 5.3s; }
-.motto-paragraph span:nth-child(40) { animation-delay: 5.4s; }
-.motto-paragraph span:nth-child(41) { animation-delay: 5.5s; }
-.motto-paragraph span:nth-child(42) { animation-delay: 5.6s; }
-.motto-paragraph span:nth-child(43) { animation-delay: 5.7s; }
-.motto-paragraph span:nth-child(44) { animation-delay: 5.8s; }
-.motto-paragraph span:nth-child(45) { animation-delay: 5.9s; }
-.motto-paragraph span:nth-child(46) { animation-delay: 6.0s; }
-.motto-paragraph span:nth-child(47) { animation-delay: 6.1s; }
-.motto-paragraph span:nth-child(48) { animation-delay: 6.2s; }
-.motto-paragraph span:nth-child(49) { animation-delay: 6.3s; }
-.motto-paragraph span:nth-child(50) { animation-delay: 6.4s; }
-.motto-paragraph span:nth-child(51) { animation-delay: 6.5s; }
-.motto-paragraph span:nth-child(52) { animation-delay: 6.6s; }
-.motto-paragraph span:nth-child(53) { animation-delay: 6.7s; }
-.motto-paragraph span:nth-child(54) { animation-delay: 6.8s; }
-.motto-paragraph span:nth-child(55) { animation-delay: 6.9s; }
-.motto-paragraph span:nth-child(56) { animation-delay: 7.0s; }
-.motto-paragraph span:nth-child(57) { animation-delay: 7.1s; }
-.motto-paragraph span:nth-child(58) { animation-delay: 7.2s; }
-.motto-paragraph span:nth-child(59) { animation-delay: 7.3s; }
-.motto-paragraph span:nth-child(60) { animation-delay: 7.4s; }
-.motto-paragraph span:nth-child(61) { animation-delay: 7.5s; }
-.motto-paragraph span:nth-child(62) { animation-delay: 7.6s; }
-.motto-paragraph span:nth-child(63) { animation-delay: 7.7s; }
-.motto-paragraph span:nth-child(64) { animation-delay: 7.8s; }
-.motto-paragraph span:nth-child(65) { animation-delay: 7.9s; }
-.motto-paragraph span:nth-child(66) { animation-delay: 8.0s; }
-.motto-paragraph span:nth-child(67) { animation-delay: 8.1s; }
-.motto-paragraph span:nth-child(68) { animation-delay: 8.2s; }
-.motto-paragraph span:nth-child(69) { animation-delay: 8.3s; }
-.motto-paragraph span:nth-child(70) { animation-delay: 8.4s; }
-.motto-paragraph span:nth-child(71) { animation-delay: 8.5s; }
-.motto-paragraph span:nth-child(72) { animation-delay: 8.6s; }
-.motto-paragraph span:nth-child(73) { animation-delay: 8.7s; }
-.motto-paragraph span:nth-child(74) { animation-delay: 8.8s; }
-.motto-paragraph span:nth-child(75) { animation-delay: 8.9s; }
-.motto-paragraph span:nth-child(76) { animation-delay: 9.0s; }
-.motto-paragraph span:nth-child(77) { animation-delay: 9.1s; }
-.motto-paragraph span:nth-child(78) { animation-delay: 9.2s; }
-.motto-paragraph span:nth-child(79) { animation-delay: 9.3s; }
-.motto-paragraph span:nth-child(80) { animation-delay: 9.4s; }
-.motto-paragraph span:nth-child(81) { animation-delay: 9.5s; }
-.motto-paragraph span:nth-child(82) { animation-delay: 9.6s; }
-.motto-paragraph span:nth-child(83) { animation-delay: 9.7s; }
-.motto-paragraph span:nth-child(84) { animation-delay: 9.8s; }
-.motto-paragraph span:nth-child(85) { animation-delay: 9.9s; }
-.motto-paragraph span:nth-child(86) { animation-delay: 10.0s; }
-.motto-paragraph span:nth-child(87) { animation-delay: 10.1s; }
-.motto-paragraph span:nth-child(88) { animation-delay: 10.2s; }
-.motto-paragraph span:nth-child(89) { animation-delay: 10.3s; }
-.motto-paragraph span:nth-child(90) { animation-delay: 10.4s; }
-.motto-paragraph span:nth-child(91) { animation-delay: 10.5s; }
-.motto-paragraph span:nth-child(92) { animation-delay: 10.6s; }
-.motto-paragraph span:nth-child(93) { animation-delay: 10.7s; }
-.motto-paragraph span:nth-child(94) { animation-delay: 10.8s; }
-.motto-paragraph span:nth-child(95) { animation-delay: 10.9s; }
-.motto-paragraph span:nth-child(96) { animation-delay: 11.0s; }
-.motto-paragraph span:nth-child(97) { animation-delay: 11.1s; }
-.motto-paragraph span:nth-child(98) { animation-delay: 11.2s; }
-.motto-paragraph span:nth-child(99) { animation-delay: 11.3s; }
-.motto-paragraph span:nth-child(100) { animation-delay: 11.4s; }
-
-    @keyframes magnifyLetter {
-      0% { opacity: 0; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.5); }
-      100% { opacity: 1; transform: scale(1); }
-    }
+ 
 
 
 
@@ -332,6 +106,12 @@ body, p, ul, li, a {
         .icon-box p {
             font-size: 16px;
         }
+        .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    gap: 20px; /* spacing between items */
+}
+
         .paragraph-container {
             display: block;
             margin-bottom: 20px;
@@ -382,6 +162,17 @@ body, p, ul, li, a {
             border: 2px solid #ccc;
             border-radius: 10px;
         }
+        .logo img {
+    display: block;
+    margin: 0 auto; /* ensures image stays centered */
+}
+
+.company-name {
+    margin-top: 10px; /* space below logo */
+    font-size: 18px;
+    font-weight: bold;
+    color: #bb0a0a;
+}
         
         .footer-container {
     display: flex;
@@ -438,8 +229,9 @@ body, p, ul, li, a {
 <body>
     <!-- Header section-->
     <header>
-        <div class="logo">
+        <div class="logo" style="text-align: center;">
             <img src="images/Quatre Logo.png" alt="Your Logo">
+            <div class="company-name" style="font-size: small;">Quatre Project Management Services Limited</div>
         </div>
         <div class="header-buttons">
         <nav>
@@ -512,7 +304,7 @@ body, p, ul, li, a {
                     <i class="fa-brands fa-edgecast"></i>
                     <h3>CONSTRUCTION SUPERVISION</h3>
                     <p> -</p>
-                    <p>Quatre Consultants Limited has a fully-fledged project management team that has demonstrated innovative approaches in the delivery of infrastructure projects on time and on budget</p>
+                    <p>Quatre Project Management Services Limited has a fully-fledged project management team that has demonstrated innovative approaches in the delivery of infrastructure projects on time and on budget</p>
                     <a href="readmore construction supervision.html" class="read-more-btn">Read More</a>
         </style>
         </style>
@@ -606,7 +398,7 @@ body, p, ul, li, a {
             <div class="footer-container">
               <div class="footer-item contact-info">
                 <h3>Contact Us</h3>
-                <p>Quatre Consultants Limited</p>
+                <p>Quatre Project Management Services Limited</p>
                 <p>Building A2, IFZA Dubai Digital Park, Dubai Silicon Oasis, Dubai, UAE</p>
                
                 <p>Phone:+971 55 998 3356</p>
